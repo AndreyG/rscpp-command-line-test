@@ -1,0 +1,120 @@
+{
+    "environment" : {
+        "build directory" : "C:/Work/JetBrains.ReSharper.CommandLineTools.2018.3.EAP6.Checked",
+        "test directory" : "C:/Work/cli-test",
+        "VS CMake Generator" : "Visual Studio 15 2017 Win64"
+    },
+    "projects" : {
+        "glslang" : {
+            "sources" : {
+                "repo" : "https://github.com/KhronosGroup/glslang.git",
+                "commit" : "1c1c2d643a6b0acaad428e82594ddde9af51c19c"
+             }
+        },
+        "cds" : {
+            "sources" : {
+                "repo" : "https://github.com/khizmax/libcds",
+                "commit" : "e808976c63e4a58b035bafa473201cf77c9a2c46"
+            }
+        },
+        "args" : {
+            "sources" : {
+                "repo" : "https://github.com/taywee/args",
+                "commit" : "a82a9d6c94d7c58d8b96c65bdc1aba09a4f3e5db"
+            }
+    	},
+        "replxx" : {
+            "sources" : {
+                "repo" : "https://github.com/AmokHuginnsson/replxx",
+                "commit" : "f719de5ee3c89d9dd955f43a8b95eecebdf9ccd6"
+            }
+        },
+        "LLVM" : {
+            "sources" : {
+                "repo" : "https://github.com/llvm-mirror/llvm.git",
+                "commit" : "9ad322c7dfd4385be9a515d734f70700f192ebae"
+            },
+            "project to check" : "ADTTests",
+            "known errors" : [
+                {
+                    "file": "..\\unittests\\ADT\\SmallVectorTest.cpp", "line": "782", 
+                    "message": "Attempt to use deleted constructor 'llvm::SmallVectorImpl<Constructable>::SmallVectorImpl(const SmallVectorImpl&)'"
+                }
+            ]
+        },
+        "fmtlib" : {
+            "sources" : {
+                "repo" : "https://github.com/fmtlib/fmt.git",
+                "commit" : "6c95fb35623e47562fdc7f6d8023688290b6f786"
+            },
+            "known errors" : [
+                {
+                    "file": "..\\test\\format-test.cc", "line": "1902", "message": "Substitution failed with S = str, Args = int"
+                },
+                {
+                    "file": "..\\test\\format-test.cc", "line": "1903", "message": "Substitution failed with S = str, Args = int"
+                },
+                {
+                    "file": "..\\test\\format-test.cc", "line": "2414",
+                    "message": "No viable function.\r\nArgument types: 'std::back_insert_iterator<std::basic_string<char>>', 'str', 'fmt::v5::basic_format_args<fmt::v5::basic_format_context<std::back_insert_iterator<fmt::v5::internal::basic_buffer<char>>, char>>'.\r\nCandidates considered: \r\n  std::enable_if<is_contiguous<Container>::value, std::back_insert_iterator<Container>>::type vformat_to<Container, S>(std::back_insert_iterator<Container> out, const S& format_str, basic_format_args<buffer_context<char_t<S>::type>::type> args)\r\n    substitution failed with Container = std::basic_string<char>, S = str\r\n  typename Context::iterator vformat_to<ArgFormatter, Char, Context>(typename ArgFormatter::range out, basic_string_view<Char> format_str, basic_format_args<Context> args, internal::locale_ref loc)\r\n    couldn't match type 'basic_string_view<Char>' against 'str'\r\n  buffer_context<Char>::type::iterator vformat_to<S, Char>(internal::basic_buffer<Char>& buf, const S& format_str, basic_format_args<buffer_context<Char>::type> args)\r\n    couldn't match type 'internal::basic_buffer<Char>&' against 'std::back_insert_iterator<std::basic_string<char>>'\r\n  std::enable_if<internal::is_output_iterator<OutputIt>::value, OutputIt>::type vformat_to<String, OutputIt, Args...>(OutputIt out, const String& format_str, format_args_t<OutputIt, char_t<String>::type>::type args)\r\n    substitution failed: type 'typename fmt::v5::format_args_t<OutputIt, typename fmt::v5::char_t<String>::type>::type' is ill-formed with OutputIt = back_insert_iterator<std::basic_string<char>>, String = str"
+                },
+                {
+                    "file": "..\\test\\format-test.cc", "line": "2424",
+                    "message": "No viable function.\r\nArgument types: 'std::back_insert_iterator<std::basic_string<wchar_t>>', 'str', 'fmt::v5::basic_format_args<fmt::v5::basic_format_context<std::back_insert_iterator<fmt::v5::internal::basic_buffer<wchar_t>>, wchar_t>>'.\r\nCandidates considered: \r\n  std::enable_if<is_contiguous<Container>::value, std::back_insert_iterator<Container>>::type vformat_to<Container, S>(std::back_insert_iterator<Container> out, const S& format_str, basic_format_args<buffer_context<char_t<S>::type>::type> args)\r\n    substitution failed with Container = std::basic_string<wchar_t>, S = str\r\n  typename Context::iterator vformat_to<ArgFormatter, Char, Context>(typename ArgFormatter::range out, basic_string_view<Char> format_str, basic_format_args<Context> args, internal::locale_ref loc)\r\n    couldn't match type 'basic_string_view<Char>' against 'str'\r\n  buffer_context<Char>::type::iterator vformat_to<S, Char>(internal::basic_buffer<Char>& buf, const S& format_str, basic_format_args<buffer_context<Char>::type> args)\r\n    couldn't match type 'internal::basic_buffer<Char>&' against 'std::back_insert_iterator<std::basic_string<wchar_t>>'\r\n  std::enable_if<internal::is_output_iterator<OutputIt>::value, OutputIt>::type vformat_to<String, OutputIt, Args...>(OutputIt out, const String& format_str, format_args_t<OutputIt, char_t<String>::type>::type args)\r\n    substitution failed: type 'typename fmt::v5::format_args_t<OutputIt, typename fmt::v5::char_t<String>::type>::type' is ill-formed with OutputIt = back_insert_iterator<std::basic_string<wchar_t>>, String = str"
+                },
+                {
+                    "file": "..\\test\\posix-mock-test.cc", "line": "434", "message": "Type 'TestMock' is incomplete"
+                },
+                {
+                    "file": "..\\test\\posix-mock-test.cc", "line": "458", "message": "Type 'LocaleMock' is incomplete"
+                },
+                {
+                    "file": "..\\test\\ostream-test.cc", "line": "170", "message": "Substitution failed with S = str, Args = std::string"
+                }
+            ]
+        },
+        "VTK" : {
+            "sources" : {
+                "repo" : "https://gitlab.kitware.com/vtk/vtk.git",
+                "commit" : "1b8edea9261a9a06b4de164f462b44925cce429e"
+            },
+            "project to check" : "vtkCommonCoreCxxTests"
+        },
+        "rocksdb" : {
+            "sources" : {
+                "repo" : "https://github.com/facebook/rocksdb.git",
+                "commit" : "de651035535b6d66276edc97c121cb507e9138cb"
+             }
+        },
+        "OpenSceneGraph" : {
+            "sources" : {
+                "repo" : "https://github.com/openscenegraph/OpenSceneGraph.git",
+                "commit" : "85504b45f6229c2695bc109d771045fcb10fc1e0"
+            }
+        },
+        "RxCpp" : {
+            "sources" : {
+                "repo" : "https://github.com/ReactiveX/RxCpp",
+                "commit" : "7930ccc3f5eca55c5866fc7b1d2476f46b8cec17"
+            },
+            "known errors" : [
+                { 
+                    "file": "..\\Rx\\v2\\src\\rxcpp\\rx-scheduler.hpp", "line": "32",
+                    "message": "Type 'rxcpp::schedulers::detail::action_type' is incomplete"
+                }
+            ]
+    	},
+        "SQLiteCpp" : {
+            "sources" : {
+                "repo" : "https://github.com/SRombauts/SQLiteCpp",
+                "commit" : "b454170da118d64eed77ee082f0d9aae8c97543d"
+            }
+        },
+        "argh" : {
+            "sources" : {
+                "repo" : "https://github.com/adishavit/argh",
+                "commit" : "0775441d436749263279626a1c820267940188f7"
+            }
+        }
+    }
+}
