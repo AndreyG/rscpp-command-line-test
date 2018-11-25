@@ -124,6 +124,12 @@
             },
             "project to check" : "cxx11_*",
             "cmake options" : ["-DEIGEN_TEST_CXX11=ON"]
+        },
+        "Dependency Checker" : {
+            "sources" : {
+                "repo" : "https://github.com/tomtom-international/cpp-dependencies.git",
+                "commit" : "e41dc70c62b2d6e3fea014b3a0e62dc64fed6d5f"
+             }
         }
     }
 }
