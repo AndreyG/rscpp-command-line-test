@@ -26,11 +26,14 @@ def get_sources(project_input, target_dir):
     subprocess.run(["git", "checkout", project_input["commit"]], check=True, stdout=PIPE, stderr=PIPE)
     return target_dir
 
-def invoke_cmake(project_dir):
+def invoke_cmake(project_dir, cmake_options):
     build_dir = path.join(project_dir, "build")
     makedirs(build_dir, exist_ok=True)
     chdir(build_dir)
-    subprocess.run(["cmake", "..", "-G", env["VS CMake Generator"]], check=True, stdout=PIPE)
+    cmd_line_args = ["cmake", "..", "-G", env["VS CMake Generator"]]
+    if cmake_options:
+        cmd_line_args.extend(cmake_options)
+    subprocess.run(cmd_line_args, check=True, stdout=PIPE)
     with open(path.join(build_dir, "CMakeCache.txt")) as cmake_cache:
         for line in cmake_cache.readlines():
             if line.startswith("CMAKE_PROJECT_NAME"):
@@ -99,7 +102,7 @@ def process_project(project_name, project):
     target_dir = path.join(projects_dir, project_name)
     project_dir = get_sources(project["sources"], target_dir)
     #print("project directory: " + project_dir)
-    sln_file = invoke_cmake(project_dir)
+    sln_file = invoke_cmake(project_dir, project.get("cmake options"))
     #print(".sln file: " + sln_file)
 
     report_file = run_inspect_code(project_dir, sln_file, project.get("project to check"))
