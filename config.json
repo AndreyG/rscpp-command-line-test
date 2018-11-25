@@ -130,6 +130,14 @@
                 "repo" : "https://github.com/tomtom-international/cpp-dependencies.git",
                 "commit" : "e41dc70c62b2d6e3fea014b3a0e62dc64fed6d5f"
              }
+        },
+        "ZSTD" : {
+            "sources" : {
+                "repo" : "https://github.com/facebook/zstd.git",
+                "commit" : "787532b91ac107e77340c6061cb6964283b89210",
+                "root" : "build/cmake"
+            },
+            "cmake options" : ["-DZSTD_BUILD_TESTS=ON"]
         }
     }
 }
