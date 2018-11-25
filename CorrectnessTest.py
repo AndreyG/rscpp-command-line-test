@@ -5,6 +5,9 @@ import time
 import xml.etree.ElementTree as ET
 import json
 from argparse import ArgumentParser
+import requests
+import io
+from zipfile import ZipFile
 
 with open("config.json") as f:
     config = json.load(f)
@@ -18,13 +21,30 @@ cli_test_dir = env["test directory"]
 projects_dir = path.join(cli_test_dir, "projects")
 caches_home = path.join(cli_test_dir, "caches-home")
 
-def get_sources(project_input, target_dir):
+def get_sources_from_git(project_input, target_dir):
     if not path.exists(path.join(target_dir, ".git")):
         subprocess.run(["git", "clone", project_input["repo"], target_dir], check=True)
     chdir(target_dir)
     subprocess.run(["git", "submodule", "update", "--init"], check=True, stdout=PIPE, stderr=PIPE)
     subprocess.run(["git", "checkout", project_input["commit"]], check=True, stdout=PIPE, stderr=PIPE)
     return target_dir
+
+def get_sources_from_zip(project_input, target_dir):
+    root_dir = path.join(target_dir, project_input["root"])
+    if not path.exists(root_dir):
+        response = requests.get(project_input["url"])
+        with ZipFile(io.BytesIO(response.content)) as zipfile:
+            zipfile.extractall(path=target_dir)
+    return root_dir
+
+def get_sources(project_input, target_dir):
+    kind = project_input.get("kind")
+    if not kind:
+        return get_sources_from_git(project_input, target_dir)
+    elif kind == "zip":
+        return get_sources_from_zip(project_input, target_dir)
+    else:
+        raise ValueError("Unknown source kind: {0}".format(kind))
 
 def invoke_cmake(project_dir, cmake_options):
     build_dir = path.join(project_dir, "build")
