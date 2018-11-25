@@ -115,6 +115,15 @@
                 "repo" : "https://github.com/adishavit/argh",
                 "commit" : "0775441d436749263279626a1c820267940188f7"
             }
+        },
+        "Eigen3" : {
+            "sources" : {
+                "kind" : "zip",
+                "url" : "http://bitbucket.org/eigen/eigen/get/3.3.5.zip",
+                "root" : "eigen-eigen-b3f3d4950030"
+            },
+            "project to check" : "cxx11_*",
+            "cmake options" : ["-DEIGEN_TEST_CXX11=ON"]
         }
     }
 }
