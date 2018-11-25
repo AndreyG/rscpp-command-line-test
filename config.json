@@ -138,6 +138,56 @@
                 "root" : "build/cmake"
             },
             "cmake options" : ["-DZSTD_BUILD_TESTS=ON"]
+        },
+        "Protobuf" : {
+            "sources" : {
+                "repo" : "https://github.com/protocolbuffers/protobuf.git",
+                "commit" : "9313cdc442c22bc62694742597ce7c543d195a73",
+                "root" : "cmake"
+            },
+            "cmake options" : ["-Dprotobuf_BUILD_TESTS=OFF"],
+            "known errors" : [
+                {
+                    "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc", "line": "500",
+                    "message": "Cannot resolve symbol '~RepeatedField'"
+                },
+                {
+                    "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc", "line": "506",
+                    "message": "Cannot resolve symbol '~RepeatedField'"
+                },
+                {
+                    "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc", "line": "507",
+                    "message": "Cannot resolve symbol '~RepeatedField'"
+                },
+                {
+                    "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc", "line": "504",
+                    "message": "Cannot resolve symbol '~RepeatedField'"
+                },
+                {
+                    "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc", "line": "501",
+                    "message": "Cannot resolve symbol '~RepeatedField'"
+                },
+                {
+                    "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc", "line": "515",
+                    "message": "Cannot resolve symbol '~RepeatedPtrField'"
+                },
+                {
+                    "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc", "line": "505",
+                    "message": "Cannot resolve symbol '~RepeatedField'"
+                },
+                {
+                    "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc", "line": "502",
+                    "message": "Cannot resolve symbol '~RepeatedField'"
+                },
+                {
+                    "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc", "line": "525",
+                    "message": "Cannot resolve symbol '~RepeatedPtrField'"
+                },
+                {
+                    "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc", "line": "503",
+                    "message": "Cannot resolve symbol '~RepeatedField'"
+                }
+            ]
         }
     }
 }
