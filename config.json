@@ -188,6 +188,42 @@
                     "message": "Cannot resolve symbol '~RepeatedField'"
                 }
             ]
+        },
+        "Chakra.Core" : {
+            "sources" : {
+                "repo" : "https://github.com/Microsoft/ChakraCore.git",
+                "commit" : "c7786bf81ae1bb592221b61b7e38684b9cb029ed"
+            },
+            "custom build tool" : {
+                "path to .sln" : "Build/Chakra.Core.sln"
+            },
+            "project to check" : "Chakra.Runtime.Debug",
+            "known errors" : [
+                {
+                    "file": "..\\lib\\Runtime\\Debug\\TTSnapObjects.cpp", "line": "2523",
+                    "message": "Cannot assign to type 'Js::JavascriptMethod' from lvalue of type 'Var(RecyclableObject* function, CallInfo callInfo, ...)'"
+                },
+                {
+                    "file": "..\\lib\\Runtime\\Debug\\TTSnapObjects.cpp", "line": "2529",
+                    "message": "Cannot assign to type 'Js::JavascriptMethod' from lvalue of type 'Var(RecyclableObject* function, CallInfo callInfo, ...)'"
+                },
+                {
+                    "file": "..\\lib\\Runtime\\Debug\\TTSnapObjects.cpp", "line": "2334",
+                    "message": "No viable function.\r\nArgument types: 'void*(Js::RecyclableObject*, Js::CallInfo, ...)', 'bool'.\r\nCandidates considered: \r\n  JavascriptGeneratorFunction* JavascriptLibrary::CreateGeneratorFunction(JavascriptMethod entryPoint, GeneratorVirtualScriptFunction* scriptFunction)\r\n    conversion of 1st argument 'Js::JavascriptGeneratorFunction::EntryGeneratorFunctionImplementation' is ill-formed: cannot convert lvalue of type 'Var(RecyclableObject* function, CallInfo callInfo, ...)' to parameter type 'JavascriptMethod'\r\n  JavascriptGeneratorFunction* JavascriptLibrary::CreateGeneratorFunction(JavascriptMethod entryPoint, bool isAnonymousFunction)\r\n    conversion of 1st argument 'Js::JavascriptGeneratorFunction::EntryGeneratorFunctionImplementation' is ill-formed: cannot convert lvalue of type 'Var(RecyclableObject* function, CallInfo callInfo, ...)' to parameter type 'JavascriptMethod'"
+                },
+                {
+                    "file": "..\\lib\\Runtime\\Debug\\TTSnapObjects.cpp", "line": "2526",
+                    "message": "Cannot assign to type 'Js::JavascriptMethod' from lvalue of type 'Var(RecyclableObject* function, CallInfo callInfo, ...)'"
+                },
+                {
+                    "file": "..\\lib\\Runtime\\Debug\\TTSnapObjects.cpp", "line": "2376",
+                    "message": "No viable function.\r\nArgument types: 'void*(Js::RecyclableObject*, Js::CallInfo, ...)', 'bool'.\r\nCandidates considered: \r\n  JavascriptAsyncFunction* JavascriptLibrary::CreateAsyncFunction(JavascriptMethod entryPoint, GeneratorVirtualScriptFunction* scriptFunction)\r\n    conversion of 1st argument 'Js::JavascriptAsyncFunction::EntryAsyncFunctionImplementation' is ill-formed: cannot convert lvalue of type 'Var(RecyclableObject* function, CallInfo callInfo, ...)' to parameter type 'JavascriptMethod'\r\n  JavascriptAsyncFunction* JavascriptLibrary::CreateAsyncFunction(JavascriptMethod entryPoint, bool isAnonymousFunction)\r\n    conversion of 1st argument 'Js::JavascriptAsyncFunction::EntryAsyncFunctionImplementation' is ill-formed: cannot convert lvalue of type 'Var(RecyclableObject* function, CallInfo callInfo, ...)' to parameter type 'JavascriptMethod'"
+                },
+                {
+                    "file": "..\\lib\\Runtime\\Debug\\MutationBreakpoint.h", "line": "5",
+                    "message": "No corresponding file with the \"Precompiled Header\" property set to \"Create\" (/Yc) is found"
+                }
+            ]
         }
     }
 }
