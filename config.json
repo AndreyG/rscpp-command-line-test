@@ -224,6 +224,17 @@
                     "message": "No corresponding file with the \"Precompiled Header\" property set to \"Create\" (/Yc) is found"
                 }
             ]
+        },
+        "CoreCLR" : {
+            "sources" : {
+                "repo" : "https://github.com/dotnet/coreclr.git",
+                "commit" : "d07633f53b51a30d294c4afe2b0b7ba5b563c134"
+            },
+            "custom build tool" : {
+                "script" : ["build.cmd", "-configureonly"],
+                "path to .sln" : "bin/obj/Windows_NT.x64.Debug/CoreCLR.sln"
+            },
+            "project to check" : "clrgc"
         }
     }
 }
