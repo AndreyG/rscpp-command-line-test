@@ -126,7 +126,16 @@ def process_project(project_name, project):
     target_dir = path.join(projects_dir, project_name)
     project_dir = get_sources(project["sources"], target_dir)
     #print("project directory: " + project_dir)
-    sln_file = invoke_cmake(project_dir, project.get("cmake options"))
+    custom_build_tool = project.get("custom build tool")
+    if custom_build_tool:
+        script = custom_build_tool.get("script")
+        if script:
+            chdir(project_dir)
+            subprocess.run(script, check=True, stdout=PIPE)
+        sln_file = path.join(project_dir, custom_build_tool["path to .sln"])
+        assert(path.exists(sln_file))
+    else:
+        sln_file = invoke_cmake(project_dir, project.get("cmake options"))
     #print(".sln file: " + sln_file)
 
     report_file = run_inspect_code(project_dir, sln_file, project.get("project to check"))
