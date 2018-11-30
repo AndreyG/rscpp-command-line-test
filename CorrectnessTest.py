@@ -122,6 +122,22 @@ def check_report(report_file, known_errors):
         else:
             print_errors("Unexpected", errors)
 
+
+def generate_settings(files_to_skip):
+    root = ET.Element("wpf:ResourceDictionary")
+    root.set("xml:space", "preserve")
+    root.set("xmlns:x", "http://schemas.microsoft.com/winfx/2006/xaml")
+    root.set("xmlns:s", "clr-namespace:System;assembly=mscorlib")
+    root.set("xmlns:ss", "urn:shemas-jetbrains-com:settings-storage-xaml")
+    root.set("xmlns:wpf", "http://schemas.microsoft.com/winfx/2006/xaml/presentation")
+
+    for f in files_to_skip:
+        entry = ET.SubElement(root, "s:Boolean")
+        entry.text = "True"
+        entry.set("x:Key", "/Default/Environment/ExcludedFiles/FilesAndFoldersToSkip/{0}/@EntryIndexedValue".format(f))
+
+    return ET.ElementTree(root)
+
 def process_project(project_name, project):
     target_dir = path.join(projects_dir, project_name)
     project_dir = get_sources(project["sources"], target_dir)
@@ -137,6 +153,9 @@ def process_project(project_name, project):
     else:
         sln_file = invoke_cmake(project_dir, project.get("cmake options"))
     #print(".sln file: " + sln_file)
+    files_to_skip = project.get("to skip")
+    if files_to_skip:
+        generate_settings(files_to_skip).write(sln_file + ".DotSettings")
 
     report_file = run_inspect_code(project_dir, sln_file, project.get("project to check"))
     check_report(report_file, project.get("known errors"))
