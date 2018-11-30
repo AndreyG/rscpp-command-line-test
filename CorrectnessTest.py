@@ -123,6 +123,11 @@ def check_report(report_file, known_errors):
             print_errors("Unexpected", errors)
 
 
+def add_entry(node, key, value):
+    entry = ET.SubElement(node, "s:Boolean")
+    entry.text = str(value)
+    entry.set("x:Key", key)
+
 def generate_settings(files_to_skip):
     root = ET.Element("wpf:ResourceDictionary")
     root.set("xml:space", "preserve")
@@ -131,10 +136,11 @@ def generate_settings(files_to_skip):
     root.set("xmlns:ss", "urn:shemas-jetbrains-com:settings-storage-xaml")
     root.set("xmlns:wpf", "http://schemas.microsoft.com/winfx/2006/xaml/presentation")
 
-    for f in files_to_skip:
-        entry = ET.SubElement(root, "s:Boolean")
-        entry.text = "True"
-        entry.set("x:Key", "/Default/Environment/ExcludedFiles/FilesAndFoldersToSkip/{0}/@EntryIndexedValue".format(f))
+    add_entry(root, "/Default/CodeInspection/CppClangTidy/EnableClangTidySupport/@EntryValue", False)
+
+    if files_to_skip:
+        for f in files_to_skip:
+            add_entry(root, "/Default/Environment/ExcludedFiles/FilesAndFoldersToSkip/{0}/@EntryIndexedValue".format(f), True)
 
     return ET.ElementTree(root)
 
@@ -153,9 +159,7 @@ def process_project(project_name, project):
     else:
         sln_file = invoke_cmake(project_dir, project.get("cmake options"))
     #print(".sln file: " + sln_file)
-    files_to_skip = project.get("to skip")
-    if files_to_skip:
-        generate_settings(files_to_skip).write(sln_file + ".DotSettings")
+    generate_settings(project.get("to skip")).write(sln_file + ".DotSettings")
 
     report_file = run_inspect_code(project_dir, sln_file, project.get("project to check"))
     check_report(report_file, project.get("known errors"))
