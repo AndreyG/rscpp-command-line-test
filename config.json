@@ -236,6 +236,19 @@
                 "path to .sln" : "bin/obj/Windows_NT.x64.Debug/CoreCLR.sln"
             },
             "project to check" : "clrgc"
+        },
+        "Catch2" : {
+            "sources" : {
+                "repo" : "https://github.com/catchorg/Catch2.git",
+                "commit" : "4902cd721586822ded795afe0c418c553137306a"
+            },
+            "to skip" : [
+                "=77E31252_002D98A6_002D3848_002DAC80_002DAF76325467F5_002Fdl_003Ainclude_003A_002E_002E_003F_002E_002E_003Finclude_002Fd_003Ainternal_002Ff_003Acatch_005Fobjc_002Ehpp",
+                "=77E31252_002D98A6_002D3848_002DAC80_002DAF76325467F5_002Fdl_003Ainclude_003A_002E_002E_003F_002E_002E_003Finclude_002Fd_003Ainternal_002Ff_003Acatch_005Fobjc_005Farc_002Ehpp"
+            ],
+            "known errors" : [
+                {"file": "..\\projects\\SelfTest\\UsageTests\\Generators.tests.cpp", "line": "60", "message": "Cannot resolve symbol 'string_view'"}
+            ]
         }
     }
 }
