@@ -78,7 +78,13 @@ def run_inspect_code(project_dir, sln_file, project_to_check):
     args.append("-o=" + report_file)
     args.append("--caches-home=" + caches_home)
     if project_to_check:
-        args.append("--project=" + project_to_check)
+        if isinstance(project_to_check, list):
+            for p in project_to_check:
+                args.append("--project=" + p)
+        else:
+            assert(isinstance(project_to_check, str))
+            args.append("--project=" + project_to_check)
+
     args.append(sln_file)
     process = Popen(args, stdout=PIPE, text=True)
     #print(subprocess.list2cmdline(args))
