@@ -35,11 +35,15 @@
                 "commit" : "9ad322c7dfd4385be9a515d734f70700f192ebae"
             },
             "cmake options" : ["-Thost=x64", "-Wno-dev"],
-            "project to check" : "ADTTests",
+            "project to check" : ["ADTTests", "SupportTests"],
             "known errors" : [
                 {
                     "file": "..\\unittests\\ADT\\SmallVectorTest.cpp", "line": "782", 
                     "message": "Attempt to use deleted constructor 'llvm::SmallVectorImpl<Constructable>::SmallVectorImpl(const SmallVectorImpl&)'"
+                },
+                {
+                    "file": "..\\unittests\\Support\\ReverseIterationTest.cpp", "line": "26",
+                     "message": "static_assert failed 'int is not pointer-like'"
                 }
             ]
         },
