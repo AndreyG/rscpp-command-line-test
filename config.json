@@ -250,6 +250,29 @@
                 "=77E31252_002D98A6_002D3848_002DAC80_002DAF76325467F5_002Fdl_003Ainclude_003A_002E_002E_003F_002E_002E_003Finclude_002Fd_003Ainternal_002Ff_003Acatch_005Fobjc_002Ehpp",
                 "=77E31252_002D98A6_002D3848_002DAC80_002DAF76325467F5_002Fdl_003Ainclude_003A_002E_002E_003F_002E_002E_003Finclude_002Fd_003Ainternal_002Ff_003Acatch_005Fobjc_005Farc_002Ehpp"
             ]
+        },
+        "PhysX-3.4" : {
+            "sources" : {
+                "repo" : "https://github.com/NVIDIAGameWorks/PhysX-3.4.git",
+                "commit" : "326e24039dd3f063afd211fad770e15bdd5ff4ea"
+            },
+            "custom build tool" : {
+                "path to .sln" : "PhysX_3.4/Source/compiler/vc15win64/PhysX.sln"
+            },
+            "project to check" : "PhysX",
+            "to skip" : [
+                "=FC0C1E74_002D2BE0_002DA8BC_002D4F0C_002D82D0F2EAB9A4_002Fdl_003Ainclude_003A_002E_002E_003F_002E_002E_003FPhysXMetaData_003Fcore_003Finclude_002Ff_003APxMetaDataCompare_002Eh"
+            ],
+            "known errors" : [
+                {
+                    "file": "..\\..\\PhysX\\src\\NpFactory.cpp", "line": "339",
+                    "message": "No 'operator =' matches arguments of type 'physx::NpClothFabric*(*)(physx::PxInputStream&)' and '<unknown>'"
+                },
+                {
+                    "file": "..\\..\\PhysX\\src\\NpFactory.cpp", "line": "340",
+                    "message": "No 'operator =' matches arguments of type 'physx::NpClothFabric*(*)(physx::PxClothFabricDesc const&)' and '<unknown>'"
+                }
+            ]
         }
     }
 }
