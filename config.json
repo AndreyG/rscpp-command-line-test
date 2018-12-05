@@ -262,16 +262,6 @@
             "project to check" : "PhysX",
             "to skip" : [
                 "=FC0C1E74_002D2BE0_002DA8BC_002D4F0C_002D82D0F2EAB9A4_002Fdl_003Ainclude_003A_002E_002E_003F_002E_002E_003FPhysXMetaData_003Fcore_003Finclude_002Ff_003APxMetaDataCompare_002Eh"
-            ],
-            "known errors" : [
-                {
-                    "file": "..\\..\\PhysX\\src\\NpFactory.cpp", "line": "339",
-                    "message": "No 'operator =' matches arguments of type 'physx::NpClothFabric*(*)(physx::PxInputStream&)' and '<unknown>'"
-                },
-                {
-                    "file": "..\\..\\PhysX\\src\\NpFactory.cpp", "line": "340",
-                    "message": "No 'operator =' matches arguments of type 'physx::NpClothFabric*(*)(physx::PxClothFabricDesc const&)' and '<unknown>'"
-                }
             ]
         }
     }
