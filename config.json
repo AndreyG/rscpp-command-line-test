@@ -247,8 +247,7 @@
                 "commit" : "4902cd721586822ded795afe0c418c553137306a"
             },
             "to skip" : [
-                "=77E31252_002D98A6_002D3848_002DAC80_002DAF76325467F5_002Fdl_003Ainclude_003A_002E_002E_003F_002E_002E_003Finclude_002Fd_003Ainternal_002Ff_003Acatch_005Fobjc_002Ehpp",
-                "=77E31252_002D98A6_002D3848_002DAC80_002DAF76325467F5_002Fdl_003Ainclude_003A_002E_002E_003F_002E_002E_003Finclude_002Fd_003Ainternal_002Ff_003Acatch_005Fobjc_005Farc_002Ehpp"
+                "catch_005Fobjc_002A"
             ]
         },
         "PhysX-3.4" : {
@@ -261,7 +260,7 @@
             },
             "project to check" : "PhysX",
             "to skip" : [
-                "=FC0C1E74_002D2BE0_002DA8BC_002D4F0C_002D82D0F2EAB9A4_002Fdl_003Ainclude_003A_002E_002E_003F_002E_002E_003FPhysXMetaData_003Fcore_003Finclude_002Ff_003APxMetaDataCompare_002Eh"
+                "PxMetaDataCompare_002Eh"
             ]
         }
     }

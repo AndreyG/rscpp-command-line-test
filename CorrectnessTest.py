@@ -146,7 +146,7 @@ def generate_settings(files_to_skip):
 
     if files_to_skip:
         for f in files_to_skip:
-            add_entry(root, "/Default/Environment/ExcludedFiles/FilesAndFoldersToSkip/{0}/@EntryIndexedValue".format(f), True)
+            add_entry(root, "/Default/Environment/ExcludedFiles/FileMasksToSkip/={0}/@EntryIndexedValue".format(f), True)
 
     return ET.ElementTree(root)
 
