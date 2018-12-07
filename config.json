@@ -279,6 +279,13 @@
             },
             "build dir" : "out"
         },
+        "Google-RE2" : {
+            "sources" : {
+                "repo" : "https://github.com/google/re2.git",
+                "commit" : "e860767c86e577b87deadf24cc4567ea83c4f162"
+            },
+            "build dir" : "out"
+        },
         "PhysX-3.4" : {
             "sources" : {
                 "repo" : "https://github.com/NVIDIAGameWorks/PhysX-3.4.git",
