@@ -104,6 +104,13 @@
                 "commit" : "85504b45f6229c2695bc109d771045fcb10fc1e0"
             }
         },
+        "OpenCV" : {
+            "sources" : {
+                "repo" : "https://github.com/opencv/opencv.git",
+                "commit" : "cab15f6c5e32110b1c9ee0359ee7f8801defe53d"
+            },
+            "project to check" : "opencv_test_*"
+        },
         "RxCpp" : {
             "sources" : {
                 "repo" : "https://github.com/ReactiveX/RxCpp",
