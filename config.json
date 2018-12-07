@@ -137,6 +137,14 @@
             "project to check" : "cxx11_*",
             "cmake options" : ["-DEIGEN_TEST_CXX11=ON"]
         },
+        "X265" : {
+            "sources" : {
+                "kind" : "zip",
+                "url" : "https://bitbucket.org/multicoreware/x265/get/2.9.zip",
+                "root" : "multicoreware-x265-f9681d731f2e/source"
+            },
+            "project to check" : ["common", "encoder"]
+        },
         "Dependency Checker" : {
             "sources" : {
                 "repo" : "https://github.com/tomtom-international/cpp-dependencies.git",
