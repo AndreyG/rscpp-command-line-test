@@ -50,8 +50,7 @@ def get_sources(project_input, target_dir):
     else:
         raise ValueError("Unknown source kind: {0}".format(kind))
 
-def invoke_cmake(project_dir, cmake_options):
-    build_dir = path.join(project_dir, "build")
+def invoke_cmake(build_dir, cmake_options):
     makedirs(build_dir, exist_ok=True)
     chdir(build_dir)
     cmd_line_args = ["cmake", "..", "-G", env["VS CMake Generator"]]
@@ -163,7 +162,9 @@ def process_project(project_name, project):
         sln_file = path.join(project_dir, custom_build_tool["path to .sln"])
         assert(path.exists(sln_file))
     else:
-        sln_file = invoke_cmake(project_dir, project.get("cmake options"))
+        build_dir = path.join(project_dir, project.get("build dir", "build"))
+        sln_file = invoke_cmake(build_dir, project.get("cmake options"))
+
     #print(".sln file: " + sln_file)
     generate_settings(project.get("to skip")).write(sln_file + ".DotSettings")
 
