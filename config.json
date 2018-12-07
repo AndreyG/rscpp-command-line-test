@@ -272,6 +272,13 @@
                 "catch_005Fobjc_002A"
             ]
         },
+        "Google-Brotli" : {
+            "sources" : {
+                "repo" : "https://github.com/google/brotli.git",
+                "commit" : "5805f99a533a8f8118699c0100d8c102f3605f65"
+            },
+            "build dir" : "out"
+        },
         "PhysX-3.4" : {
             "sources" : {
                 "repo" : "https://github.com/NVIDIAGameWorks/PhysX-3.4.git",
