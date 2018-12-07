@@ -85,6 +85,13 @@
             },
             "project to check" : "vtkCommonCoreCxxTests"
         },
+        "ITK" : {
+            "sources" : {
+                "repo" : "https://github.com/InsightSoftwareConsortium/ITK.git",
+                "commit" : "b95b4c41af6ba76bdb26a59967c85fdcc23f1464"
+            },
+            "project to check" : "ITKCommon"
+        },
         "rocksdb" : {
             "sources" : {
                 "repo" : "https://github.com/facebook/rocksdb.git",
