@@ -286,6 +286,12 @@
             },
             "build dir" : "out"
         },
+        "Snappy" : {
+            "sources" : {
+                "repo" : "https://github.com/google/snappy.git",
+                "commit" : "ea660b57d65d68d521287c903459b6dd3b2804d0"
+            }
+        },
         "PhysX-3.4" : {
             "sources" : {
                 "repo" : "https://github.com/NVIDIAGameWorks/PhysX-3.4.git",
