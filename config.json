@@ -292,6 +292,15 @@
                 "commit" : "ea660b57d65d68d521287c903459b6dd3b2804d0"
             }
         },
+        "dlib" : {
+            "sources" : {
+                "repo" : "https://github.com/davisking/dlib.git",
+                "commit" : "99af7b9d54f47fc0609490fde09b6c20fde6ae62"
+            },
+            "to skip" : [
+                "zlib_002F_002A_002Ec"
+            ]
+        },
         "PhysX-3.4" : {
             "sources" : {
                 "repo" : "https://github.com/NVIDIAGameWorks/PhysX-3.4.git",
