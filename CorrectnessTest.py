@@ -12,6 +12,8 @@ from zipfile import ZipFile
 with open("config.json") as f:
     config = json.load(f)
 
+proj_config_dir = path.abspath("proj-config")
+
 env = config["environment"]
 
 resharper_build = env["build directory"]
@@ -150,6 +152,10 @@ def generate_settings(files_to_skip):
     return ET.ElementTree(root)
 
 def process_project(project_name, project):
+    if isinstance(project, str):
+        with open(path.join(proj_config_dir, project)) as pf:
+            project = json.load(pf)
+
     target_dir = path.join(projects_dir, project_name)
     project_dir = get_sources(project["sources"], target_dir)
     #print("project directory: " + project_dir)
