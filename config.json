@@ -29,55 +29,8 @@
                 "commit" : "f719de5ee3c89d9dd955f43a8b95eecebdf9ccd6"
             }
         },
-        "LLVM" : {
-            "sources" : {
-                "repo" : "https://github.com/llvm-mirror/llvm.git",
-                "commit" : "9ad322c7dfd4385be9a515d734f70700f192ebae"
-            },
-            "cmake options" : ["-Thost=x64", "-Wno-dev"],
-            "project to check" : ["ADTTests", "SupportTests"],
-            "known errors" : [
-                {
-                    "file": "..\\unittests\\ADT\\SmallVectorTest.cpp", "line": "782", 
-                    "message": "Attempt to use deleted constructor 'llvm::SmallVectorImpl<Constructable>::SmallVectorImpl(const SmallVectorImpl&)'"
-                },
-                {
-                    "file": "..\\unittests\\Support\\ReverseIterationTest.cpp", "line": "26",
-                     "message": "static_assert failed 'int is not pointer-like'"
-                }
-            ]
-        },
-        "fmtlib" : {
-            "sources" : {
-                "repo" : "https://github.com/fmtlib/fmt.git",
-                "commit" : "6c95fb35623e47562fdc7f6d8023688290b6f786"
-            },
-            "known errors" : [
-                {
-                    "file": "..\\test\\format-test.cc", "line": "1902", "message": "Substitution failed with S = str, Args = int"
-                },
-                {
-                    "file": "..\\test\\format-test.cc", "line": "1903", "message": "Substitution failed with S = str, Args = int"
-                },
-                {
-                    "file": "..\\test\\format-test.cc", "line": "2414",
-                    "message": "No viable function.\r\nArgument types: 'std::back_insert_iterator<std::basic_string<char>>', 'str', 'fmt::v5::basic_format_args<fmt::v5::basic_format_context<std::back_insert_iterator<fmt::v5::internal::basic_buffer<char>>, char>>'.\r\nCandidates considered: \r\n  std::enable_if<is_contiguous<Container>::value, std::back_insert_iterator<Container>>::type vformat_to<Container, S>(std::back_insert_iterator<Container> out, const S& format_str, basic_format_args<buffer_context<char_t<S>::type>::type> args)\r\n    substitution failed with Container = std::basic_string<char>, S = str\r\n  typename Context::iterator vformat_to<ArgFormatter, Char, Context>(typename ArgFormatter::range out, basic_string_view<Char> format_str, basic_format_args<Context> args, internal::locale_ref loc)\r\n    couldn't match type 'basic_string_view<Char>' against 'str'\r\n  buffer_context<Char>::type::iterator vformat_to<S, Char>(internal::basic_buffer<Char>& buf, const S& format_str, basic_format_args<buffer_context<Char>::type> args)\r\n    couldn't match type 'internal::basic_buffer<Char>&' against 'std::back_insert_iterator<std::basic_string<char>>'\r\n  std::enable_if<internal::is_output_iterator<OutputIt>::value, OutputIt>::type vformat_to<String, OutputIt, Args...>(OutputIt out, const String& format_str, format_args_t<OutputIt, char_t<String>::type>::type args)\r\n    substitution failed: type 'typename fmt::v5::format_args_t<OutputIt, typename fmt::v5::char_t<String>::type>::type' is ill-formed with OutputIt = back_insert_iterator<std::basic_string<char>>, String = str"
-                },
-                {
-                    "file": "..\\test\\format-test.cc", "line": "2424",
-                    "message": "No viable function.\r\nArgument types: 'std::back_insert_iterator<std::basic_string<wchar_t>>', 'str', 'fmt::v5::basic_format_args<fmt::v5::basic_format_context<std::back_insert_iterator<fmt::v5::internal::basic_buffer<wchar_t>>, wchar_t>>'.\r\nCandidates considered: \r\n  std::enable_if<is_contiguous<Container>::value, std::back_insert_iterator<Container>>::type vformat_to<Container, S>(std::back_insert_iterator<Container> out, const S& format_str, basic_format_args<buffer_context<char_t<S>::type>::type> args)\r\n    substitution failed with Container = std::basic_string<wchar_t>, S = str\r\n  typename Context::iterator vformat_to<ArgFormatter, Char, Context>(typename ArgFormatter::range out, basic_string_view<Char> format_str, basic_format_args<Context> args, internal::locale_ref loc)\r\n    couldn't match type 'basic_string_view<Char>' against 'str'\r\n  buffer_context<Char>::type::iterator vformat_to<S, Char>(internal::basic_buffer<Char>& buf, const S& format_str, basic_format_args<buffer_context<Char>::type> args)\r\n    couldn't match type 'internal::basic_buffer<Char>&' against 'std::back_insert_iterator<std::basic_string<wchar_t>>'\r\n  std::enable_if<internal::is_output_iterator<OutputIt>::value, OutputIt>::type vformat_to<String, OutputIt, Args...>(OutputIt out, const String& format_str, format_args_t<OutputIt, char_t<String>::type>::type args)\r\n    substitution failed: type 'typename fmt::v5::format_args_t<OutputIt, typename fmt::v5::char_t<String>::type>::type' is ill-formed with OutputIt = back_insert_iterator<std::basic_string<wchar_t>>, String = str"
-                },
-                {
-                    "file": "..\\test\\posix-mock-test.cc", "line": "434", "message": "Type 'TestMock' is incomplete"
-                },
-                {
-                    "file": "..\\test\\posix-mock-test.cc", "line": "458", "message": "Type 'LocaleMock' is incomplete"
-                },
-                {
-                    "file": "..\\test\\ostream-test.cc", "line": "170", "message": "Substitution failed with S = str, Args = std::string"
-                }
-            ]
-        },
+        "LLVM" : "LLVM.json",
+        "fmtlib" : "FMT.json",
         "VTK" : {
             "sources" : {
                 "repo" : "https://gitlab.kitware.com/vtk/vtk.git",
@@ -166,92 +119,8 @@
             },
             "cmake options" : ["-DZSTD_BUILD_TESTS=ON"]
         },
-        "Protobuf" : {
-            "sources" : {
-                "repo" : "https://github.com/protocolbuffers/protobuf.git",
-                "commit" : "9313cdc442c22bc62694742597ce7c543d195a73",
-                "root" : "cmake"
-            },
-            "cmake options" : ["-Dprotobuf_BUILD_TESTS=OFF"],
-            "known errors" : [
-                {
-                    "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc", "line": "500",
-                    "message": "Cannot resolve symbol '~RepeatedField'"
-                },
-                {
-                    "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc", "line": "506",
-                    "message": "Cannot resolve symbol '~RepeatedField'"
-                },
-                {
-                    "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc", "line": "507",
-                    "message": "Cannot resolve symbol '~RepeatedField'"
-                },
-                {
-                    "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc", "line": "504",
-                    "message": "Cannot resolve symbol '~RepeatedField'"
-                },
-                {
-                    "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc", "line": "501",
-                    "message": "Cannot resolve symbol '~RepeatedField'"
-                },
-                {
-                    "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc", "line": "515",
-                    "message": "Cannot resolve symbol '~RepeatedPtrField'"
-                },
-                {
-                    "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc", "line": "505",
-                    "message": "Cannot resolve symbol '~RepeatedField'"
-                },
-                {
-                    "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc", "line": "502",
-                    "message": "Cannot resolve symbol '~RepeatedField'"
-                },
-                {
-                    "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc", "line": "525",
-                    "message": "Cannot resolve symbol '~RepeatedPtrField'"
-                },
-                {
-                    "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc", "line": "503",
-                    "message": "Cannot resolve symbol '~RepeatedField'"
-                }
-            ]
-        },
-        "Chakra.Core" : {
-            "sources" : {
-                "repo" : "https://github.com/Microsoft/ChakraCore.git",
-                "commit" : "c7786bf81ae1bb592221b61b7e38684b9cb029ed"
-            },
-            "custom build tool" : {
-                "path to .sln" : "Build/Chakra.Core.sln"
-            },
-            "project to check" : "Chakra.Runtime.Debug",
-            "known errors" : [
-                {
-                    "file": "..\\lib\\Runtime\\Debug\\TTSnapObjects.cpp", "line": "2523",
-                    "message": "Cannot assign to type 'Js::JavascriptMethod' from lvalue of type 'Var(RecyclableObject* function, CallInfo callInfo, ...)'"
-                },
-                {
-                    "file": "..\\lib\\Runtime\\Debug\\TTSnapObjects.cpp", "line": "2529",
-                    "message": "Cannot assign to type 'Js::JavascriptMethod' from lvalue of type 'Var(RecyclableObject* function, CallInfo callInfo, ...)'"
-                },
-                {
-                    "file": "..\\lib\\Runtime\\Debug\\TTSnapObjects.cpp", "line": "2334",
-                    "message": "No viable function.\r\nArgument types: 'void*(Js::RecyclableObject*, Js::CallInfo, ...)', 'bool'.\r\nCandidates considered: \r\n  JavascriptGeneratorFunction* JavascriptLibrary::CreateGeneratorFunction(JavascriptMethod entryPoint, GeneratorVirtualScriptFunction* scriptFunction)\r\n    conversion of 1st argument 'Js::JavascriptGeneratorFunction::EntryGeneratorFunctionImplementation' is ill-formed: cannot convert lvalue of type 'Var(RecyclableObject* function, CallInfo callInfo, ...)' to parameter type 'JavascriptMethod'\r\n  JavascriptGeneratorFunction* JavascriptLibrary::CreateGeneratorFunction(JavascriptMethod entryPoint, bool isAnonymousFunction)\r\n    conversion of 1st argument 'Js::JavascriptGeneratorFunction::EntryGeneratorFunctionImplementation' is ill-formed: cannot convert lvalue of type 'Var(RecyclableObject* function, CallInfo callInfo, ...)' to parameter type 'JavascriptMethod'"
-                },
-                {
-                    "file": "..\\lib\\Runtime\\Debug\\TTSnapObjects.cpp", "line": "2526",
-                    "message": "Cannot assign to type 'Js::JavascriptMethod' from lvalue of type 'Var(RecyclableObject* function, CallInfo callInfo, ...)'"
-                },
-                {
-                    "file": "..\\lib\\Runtime\\Debug\\TTSnapObjects.cpp", "line": "2376",
-                    "message": "No viable function.\r\nArgument types: 'void*(Js::RecyclableObject*, Js::CallInfo, ...)', 'bool'.\r\nCandidates considered: \r\n  JavascriptAsyncFunction* JavascriptLibrary::CreateAsyncFunction(JavascriptMethod entryPoint, GeneratorVirtualScriptFunction* scriptFunction)\r\n    conversion of 1st argument 'Js::JavascriptAsyncFunction::EntryAsyncFunctionImplementation' is ill-formed: cannot convert lvalue of type 'Var(RecyclableObject* function, CallInfo callInfo, ...)' to parameter type 'JavascriptMethod'\r\n  JavascriptAsyncFunction* JavascriptLibrary::CreateAsyncFunction(JavascriptMethod entryPoint, bool isAnonymousFunction)\r\n    conversion of 1st argument 'Js::JavascriptAsyncFunction::EntryAsyncFunctionImplementation' is ill-formed: cannot convert lvalue of type 'Var(RecyclableObject* function, CallInfo callInfo, ...)' to parameter type 'JavascriptMethod'"
-                },
-                {
-                    "file": "..\\lib\\Runtime\\Debug\\MutationBreakpoint.h", "line": "5",
-                    "message": "No corresponding file with the \"Precompiled Header\" property set to \"Create\" (/Yc) is found"
-                }
-            ]
-        },
+        "Protobuf" : "Protobuf.json",
+        "Chakra.Core" : "Chakra.json",
         "CoreCLR" : {
             "sources" : {
                 "repo" : "https://github.com/dotnet/coreclr.git",
