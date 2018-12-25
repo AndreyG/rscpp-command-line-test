@@ -1,10 +1,16 @@
 {
     "sources": {
         "repo": "https://github.com/llvm-mirror/llvm.git",
-        "commit": "9ad322c7dfd4385be9a515d734f70700f192ebae"
+        "commit": "master",
+        "subrepo" : {
+            "path" : "tools/clang",
+            "url": "https://github.com/llvm-mirror/clang.git",
+            "commit": "master"
+        }
     },
     "cmake options": [ "-Thost=x64", "-Wno-dev" ],
-    "project to check": [ "ADTTests", "SupportTests" ],
+    "build step" : "cmake --build . --target tools/clang/lib/Sema/clangSema",
+    "project to check": [ "ADTTests", "SupportTests", "clangSema", "clangFormat" ],
     "known errors": [
         {
             "file": "..\\unittests\\ADT\\SmallVectorTest.cpp",
@@ -15,6 +21,11 @@
             "file": "..\\unittests\\Support\\ReverseIterationTest.cpp",
             "line": "26",
             "message": "static_assert failed 'int is not pointer-like'"
+        },
+        {
+            "file": "..\\tools\\clang\\lib\\Sema\\TreeTransform.h",
+            "line": "3976",
+            "message": "Member 'Self' is not initialized in this constructor"
         }
     ]
 }
