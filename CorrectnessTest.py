@@ -178,6 +178,10 @@ def process_project(project_name, project):
     else:
         build_dir = path.join(project_dir, project.get("build dir", "build"))
         sln_file = invoke_cmake(build_dir, project.get("cmake options"))
+        build_step = project.get("build step")
+        if build_step:
+            chdir(build_dir)
+            subprocess.run(build_step.split(), check=True, stdout=PIPE)
 
     #print(".sln file: " + sln_file)
     generate_settings(project.get("to skip")).write(sln_file + ".DotSettings")
