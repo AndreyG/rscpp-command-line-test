@@ -130,7 +130,7 @@
                 "script" : ["build.cmd", "-configureonly"],
                 "path to .sln" : "bin/obj/Windows_NT.x64.Debug/CoreCLR.sln"
             },
-            "project to check" : "clrgc"
+            "project to check" : ["clrgc", "cordbdi"]
         },
         "Catch2" : {
             "sources" : {
