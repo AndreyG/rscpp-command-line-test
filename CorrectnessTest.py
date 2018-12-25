@@ -26,7 +26,15 @@ caches_home = path.join(cli_test_dir, "caches-home")
 def get_sources_from_git(project_input, target_dir):
     if not path.exists(path.join(target_dir, ".git")):
         subprocess.run(["git", "clone", project_input["repo"], target_dir], check=True)
+
     chdir(target_dir)
+    subrepo = project_input.get("subrepo")
+    if subrepo:
+        subrepo_dir = subrepo["path"]
+        if not path.exists(path.join(subrepo_dir, ".git")):
+            subprocess.run(["git", "clone", subrepo["url"], subrepo_dir], check=True)
+        subprocess.run(["git", "checkout", subrepo["commit"]], check=True, stdout=PIPE, stderr=PIPE)
+
     subprocess.run(["git", "submodule", "update", "--init"], check=True, stdout=PIPE, stderr=PIPE)
     subprocess.run(["git", "checkout", project_input["commit"]], check=True, stdout=PIPE, stderr=PIPE)
     root_dir = project_input.get("root")
