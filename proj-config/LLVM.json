@@ -1,11 +1,11 @@
 {
     "sources": {
         "repo": "https://github.com/llvm-mirror/llvm.git",
-        "commit": "master",
+        "commit": "2e5edf4b8d6d685aa79498ce553b1dfc5d79c87c",
         "subrepo" : {
             "path" : "tools/clang",
             "url": "https://github.com/llvm-mirror/clang.git",
-            "commit": "master"
+            "commit": "a7ee181aaa8a79b1fece474c733c4f571f0d4ef2"
         }
     },
     "cmake options": [ "-Thost=x64", "-Wno-dev" ],
@@ -14,17 +14,17 @@
     "known errors": [
         {
             "file": "..\\unittests\\ADT\\SmallVectorTest.cpp",
-            "line": "782",
+            "line": "781",
             "message": "Attempt to use deleted constructor 'llvm::SmallVectorImpl<Constructable>::SmallVectorImpl(const SmallVectorImpl&)'"
         },
         {
             "file": "..\\unittests\\Support\\ReverseIterationTest.cpp",
-            "line": "26",
+            "line": "25",
             "message": "static_assert failed 'int is not pointer-like'"
         },
         {
             "file": "..\\tools\\clang\\lib\\Sema\\TreeTransform.h",
-            "line": "3976",
+            "line": "3975",
             "message": "Member 'Self' is not initialized in this constructor"
         }
     ]
