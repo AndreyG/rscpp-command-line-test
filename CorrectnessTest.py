@@ -33,7 +33,9 @@ def get_sources_from_git(project_input, target_dir):
         subrepo_dir = subrepo["path"]
         if not path.exists(path.join(subrepo_dir, ".git")):
             subprocess.run(["git", "clone", subrepo["url"], subrepo_dir], check=True)
+        chdir(subrepo_dir)
         subprocess.run(["git", "checkout", subrepo["commit"]], check=True, stdout=PIPE, stderr=PIPE)
+        chdir(target_dir)
 
     subprocess.run(["git", "submodule", "update", "--init"], check=True, stdout=PIPE, stderr=PIPE)
     subprocess.run(["git", "checkout", project_input["commit"]], check=True, stdout=PIPE, stderr=PIPE)
