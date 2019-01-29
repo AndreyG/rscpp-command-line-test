@@ -170,6 +170,15 @@
                 "zlib_002F_002A_002Ec"
             ]
         },
+        "imgui" : {
+            "sources" : {
+                "repo" : "https://github.com/ocornut/imgui.git",
+                "commit" : "ed240c910bb1019a23c59806f7856bebe181cef7"
+            },
+            "custom build tool" : {
+                "path to .sln" : "examples/imgui_examples.sln"
+            }
+        },
         "PhysX-3.4" : {
             "sources" : {
                 "repo" : "https://github.com/NVIDIAGameWorks/PhysX-3.4.git",
