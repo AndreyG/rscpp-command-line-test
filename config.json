@@ -55,7 +55,13 @@
             "sources" : {
                 "repo" : "https://github.com/openscenegraph/OpenSceneGraph.git",
                 "commit" : "85504b45f6229c2695bc109d771045fcb10fc1e0"
-            }
+            },
+            "known errors" : [
+                {
+                    "file": "..\\src\\osgPlugins\\cfg\\ConfigParser.cpp", "line": "251",
+                    "message": "Cannot resolve symbol 'ConfigParser_lex'"
+                }
+            ]
         },
         "OpenCV" : {
             "sources" : {
