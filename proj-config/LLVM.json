@@ -18,11 +18,6 @@
             "message": "Attempt to use deleted constructor 'llvm::SmallVectorImpl<Constructable>::SmallVectorImpl(const SmallVectorImpl&)'"
         },
         {
-            "file": "..\\unittests\\Support\\ReverseIterationTest.cpp",
-            "line": "25",
-            "message": "static_assert failed 'int is not pointer-like'"
-        },
-        {
             "file": "..\\tools\\clang\\lib\\Sema\\TreeTransform.h",
             "line": "3975",
             "message": "Member 'Self' is not initialized in this constructor"
