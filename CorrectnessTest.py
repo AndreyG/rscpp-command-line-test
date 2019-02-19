@@ -83,7 +83,7 @@ def duration(start, end):
     return "{:02}:{:02}".format(int(minutes), int(seconds))
     
 
-def run_inspect_code(project_dir, sln_file, project_to_check):
+def run_inspect_code(project_dir, sln_file, project_to_check, msbuild_props):
     report_file = path.join(project_dir, "resharper-report.xml")
     args = [inspect_code_path, "-s=ERROR", "-f=Xml"]
     args.append("-o=" + report_file)
@@ -95,6 +95,9 @@ def run_inspect_code(project_dir, sln_file, project_to_check):
         else:
             assert(isinstance(project_to_check, str))
             args.append("--project=" + project_to_check)
+    if msbuild_props:
+        props = ["{0}={1}".format(key, value) for key, value in msbuild_props.items()]
+        args.append("--properties:" + ";".join(props))
 
     args.append(sln_file)
     process = Popen(args, stdout=PIPE, text=True)
@@ -188,7 +191,9 @@ def process_project(project_name, project):
     #print(".sln file: " + sln_file)
     generate_settings(project.get("to skip")).write(sln_file + ".DotSettings")
 
-    report_file = run_inspect_code(project_dir, sln_file, project.get("project to check"))
+    project_to_check = project.get("project to check")
+    msbuild_props = project.get("msbuild properties")
+    report_file = run_inspect_code(project_dir, sln_file, project_to_check, msbuild_props)
     check_report(report_file, project.get("known errors"))
 
 
