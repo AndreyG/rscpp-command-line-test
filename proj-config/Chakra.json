@@ -7,6 +7,10 @@
         "path to .sln": "Build/Chakra.Core.sln"
     },
     "project to check": "Chakra.Runtime.Debug",
+    "msbuild properties" : {
+        "Configuration" : "Release",
+        "Platform" : "x64"
+    },
     "known errors": [
         {
             "file": "..\\lib\\Runtime\\Debug\\TTSnapObjects.cpp",
