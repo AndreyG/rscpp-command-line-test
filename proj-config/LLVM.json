@@ -13,11 +13,6 @@
     "project to check": [ "ADTTests", "SupportTests", "clangSema", "clangFormat" ],
     "known errors": [
         {
-            "file": "..\\unittests\\ADT\\SmallVectorTest.cpp",
-            "line": "781",
-            "message": "Attempt to use deleted constructor 'llvm::SmallVectorImpl<Constructable>::SmallVectorImpl(const SmallVectorImpl&)'"
-        },
-        {
             "file": "..\\tools\\clang\\lib\\Sema\\TreeTransform.h",
             "line": "3975",
             "message": "Member 'Self' is not initialized in this constructor"
