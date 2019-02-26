@@ -2,42 +2,5 @@
     "sources": {
         "repo": "https://github.com/fmtlib/fmt.git",
         "commit": "6c95fb35623e47562fdc7f6d8023688290b6f786"
-    },
-    "known errors": [
-        {
-            "file": "..\\test\\format-test.cc",
-            "line": "1902",
-            "message": "Substitution failed: type 'typename fmt::v5::char_t<S>::type' is ill-formed with S = str, Args = int"
-        },
-        {
-            "file": "..\\test\\format-test.cc",
-            "line": "1903",
-            "message": "Substitution failed: type 'typename fmt::v5::char_t<S>::type' is ill-formed with S = str, Args = int"
-        },
-        {
-            "file": "..\\test\\format-test.cc",
-            "line": "2414",
-            "message": "No viable function.\r\nArgument types: 'std::back_insert_iterator<std::basic_string<char>>', 'str', 'fmt::v5::basic_format_args<fmt::v5::basic_format_context<std::back_insert_iterator<fmt::v5::internal::basic_buffer<char>>, char>>'.\r\nCandidates considered: \r\n  std::enable_if<is_contiguous<Container>::value, std::back_insert_iterator<Container>>::type vformat_to<Container, S>(std::back_insert_iterator<Container> out, const S& format_str, basic_format_args<buffer_context<char_t<S>::type>::type> args)\r\n    substitution failed: type 'typename fmt::v5::buffer_context<typename fmt::v5::char_t<S>::type>::type' is ill-formed with Container = std::basic_string<char>, S = str\r\n  typename Context::iterator vformat_to<ArgFormatter, Char, Context>(typename ArgFormatter::range out, basic_string_view<Char> format_str, basic_format_args<Context> args, internal::locale_ref loc)\r\n    couldn't match type 'basic_string_view<Char>' against 'str'\r\n  buffer_context<Char>::type::iterator vformat_to<S, Char>(internal::basic_buffer<Char>& buf, const S& format_str, basic_format_args<buffer_context<Char>::type> args)\r\n    couldn't match type 'internal::basic_buffer<Char>&' against 'std::back_insert_iterator<std::basic_string<char>>'\r\n  std::enable_if<internal::is_output_iterator<OutputIt>::value, OutputIt>::type vformat_to<String, OutputIt, Args...>(OutputIt out, const String& format_str, format_args_t<OutputIt, char_t<String>::type>::type args)\r\n    substitution failed: type 'typename fmt::v5::format_args_t<OutputIt, typename fmt::v5::char_t<String>::type>::type' is ill-formed with OutputIt = back_insert_iterator<std::basic_string<char>>, String = str"
-        },
-        {
-            "file": "..\\test\\format-test.cc",
-            "line": "2424",
-            "message": "No viable function.\r\nArgument types: 'std::back_insert_iterator<std::basic_string<wchar_t>>', 'str', 'fmt::v5::basic_format_args<fmt::v5::basic_format_context<std::back_insert_iterator<fmt::v5::internal::basic_buffer<wchar_t>>, wchar_t>>'.\r\nCandidates considered: \r\n  std::enable_if<is_contiguous<Container>::value, std::back_insert_iterator<Container>>::type vformat_to<Container, S>(std::back_insert_iterator<Container> out, const S& format_str, basic_format_args<buffer_context<char_t<S>::type>::type> args)\r\n    substitution failed: type 'typename fmt::v5::buffer_context<typename fmt::v5::char_t<S>::type>::type' is ill-formed with Container = std::basic_string<wchar_t>, S = str\r\n  typename Context::iterator vformat_to<ArgFormatter, Char, Context>(typename ArgFormatter::range out, basic_string_view<Char> format_str, basic_format_args<Context> args, internal::locale_ref loc)\r\n    couldn't match type 'basic_string_view<Char>' against 'str'\r\n  buffer_context<Char>::type::iterator vformat_to<S, Char>(internal::basic_buffer<Char>& buf, const S& format_str, basic_format_args<buffer_context<Char>::type> args)\r\n    couldn't match type 'internal::basic_buffer<Char>&' against 'std::back_insert_iterator<std::basic_string<wchar_t>>'\r\n  std::enable_if<internal::is_output_iterator<OutputIt>::value, OutputIt>::type vformat_to<String, OutputIt, Args...>(OutputIt out, const String& format_str, format_args_t<OutputIt, char_t<String>::type>::type args)\r\n    substitution failed: type 'typename fmt::v5::format_args_t<OutputIt, typename fmt::v5::char_t<String>::type>::type' is ill-formed with OutputIt = back_insert_iterator<std::basic_string<wchar_t>>, String = str"
-        },
-        {
-            "file": "..\\test\\posix-mock-test.cc",
-            "line": "434",
-            "message": "Type 'TestMock' is incomplete"
-        },
-        {
-            "file": "..\\test\\posix-mock-test.cc",
-            "line": "458",
-            "message": "Type 'LocaleMock' is incomplete"
-        },
-        {
-            "file": "..\\test\\ostream-test.cc",
-            "line": "170",
-            "message": "Substitution failed: type 'typename fmt::v5::char_t<S>::type' is ill-formed with S = str, Args = std::string"
-        }
-    ]
+    }
 }
