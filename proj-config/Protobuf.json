@@ -9,57 +9,5 @@
         "-Dprotobuf_WITH_ZLIB=OFF",
         "-Wno-dev"
     ],
-    "to skip" : [ "gzip_005Fstream_002Eh" ],
-    "known errors": [
-        {
-            "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc",
-            "line": "500",
-            "message": "Cannot resolve symbol '~RepeatedField'"
-        },
-        {
-            "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc",
-            "line": "506",
-            "message": "Cannot resolve symbol '~RepeatedField'"
-        },
-        {
-            "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc",
-            "line": "507",
-            "message": "Cannot resolve symbol '~RepeatedField'"
-        },
-        {
-            "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc",
-            "line": "504",
-            "message": "Cannot resolve symbol '~RepeatedField'"
-        },
-        {
-            "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc",
-            "line": "501",
-            "message": "Cannot resolve symbol '~RepeatedField'"
-        },
-        {
-            "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc",
-            "line": "515",
-            "message": "Cannot resolve symbol '~RepeatedPtrField'"
-        },
-        {
-            "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc",
-            "line": "505",
-            "message": "Cannot resolve symbol '~RepeatedField'"
-        },
-        {
-            "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc",
-            "line": "502",
-            "message": "Cannot resolve symbol '~RepeatedField'"
-        },
-        {
-            "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc",
-            "line": "525",
-            "message": "Cannot resolve symbol '~RepeatedPtrField'"
-        },
-        {
-            "file": "..\\..\\src\\google\\protobuf\\dynamic_message.cc",
-            "line": "503",
-            "message": "Cannot resolve symbol '~RepeatedField'"
-        }
-    ]
+    "to skip" : [ "gzip_005Fstream_002Eh" ]
 }
