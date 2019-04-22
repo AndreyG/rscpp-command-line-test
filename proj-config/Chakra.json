@@ -16,11 +16,6 @@
             "file": "..\\lib\\Runtime\\Debug\\MutationBreakpoint.h",
             "line": "5",
             "message": "No corresponding file with the \"Precompiled Header\" property set to \"Create\" (/Yc) is found"
-        },
-        {
-            "file": "..\\lib\\Runtime\\Debug\\DiagObjectModel.cpp",
-            "line": "3490",
-            "message": "static_assert failed 'L\"Must use specialization'"
         }
     ]
 }
