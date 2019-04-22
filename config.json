@@ -165,10 +165,7 @@
             "sources" : {
                 "repo" : "https://github.com/davisking/dlib.git",
                 "commit" : "99af7b9d54f47fc0609490fde09b6c20fde6ae62"
-            },
-            "to skip" : [
-                "zlib_002F_002A_002Ec"
-            ]
+            }
         },
         "imgui" : {
             "sources" : {

@@ -6,8 +6,6 @@
     },
     "cmake options": [
         "-Dprotobuf_BUILD_TESTS=OFF",
-        "-Dprotobuf_WITH_ZLIB=OFF",
         "-Wno-dev"
-    ],
-    "to skip" : [ "gzip_005Fstream_002Eh" ]
+    ]
 }
