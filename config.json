@@ -185,6 +185,15 @@
             },
             "to skip" : ["SafeCastTests_002Ecpp"]
         },
+        "draco" : {
+            "sources" : {
+                "repo" : "https://github.com/google/draco.git",
+                "commit" : "785c9c4aa2b952236c29ad639901dbbaf216da38"
+            },
+            "to skip" : [
+                "mesh_005F_002A_005Fhelpers_002Eh"
+            ]
+        },
         "PhysX-3.4" : {
             "sources" : {
                 "repo" : "https://github.com/NVIDIAGameWorks/PhysX-3.4.git",
