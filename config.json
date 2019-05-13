@@ -178,6 +178,13 @@
         },
         "shaderc" : "Shaderc.json",
         "benchmark" : "Benchmark.json",
+        "wil" : {
+            "sources" : {
+                "repo" : "https://github.com/microsoft/wil.git",
+                "commit" : "ade910fb44f0b23c03111a2838c2148d326f5622"
+            },
+            "to skip" : ["SafeCastTests_002Ecpp"]
+        },
         "PhysX-3.4" : {
             "sources" : {
                 "repo" : "https://github.com/NVIDIAGameWorks/PhysX-3.4.git",
