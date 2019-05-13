@@ -194,6 +194,13 @@
                 "mesh_005F_002A_005Fhelpers_002Eh"
             ]
         },
+        "GLM" : {
+            "sources" : {
+                "repo" : "https://github.com/g-truc/glm.git",
+                "commit" : "fce2abd01ce21063bd25ba67c9318be83bf48813"
+            },
+            "project to check" : "test-*"
+        },
         "PhysX-3.4" : {
             "sources" : {
                 "repo" : "https://github.com/NVIDIAGameWorks/PhysX-3.4.git",
