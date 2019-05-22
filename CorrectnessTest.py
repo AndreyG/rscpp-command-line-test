@@ -178,10 +178,14 @@ def process_project(project_name, project):
     #print("project directory: " + project_dir)
     custom_build_tool = project.get("custom build tool")
     if custom_build_tool:
-        script = custom_build_tool.get("script")
-        if script:
+        prepare_sln_script = custom_build_tool.get("script")
+        if prepare_sln_script:
             chdir(project_dir)
-            subprocess.run(script, check=True, stdout=PIPE)
+            subprocess.run(prepare_sln_script, check=True, stdout=PIPE)
+        build_step = custom_build_tool.get("build step")
+        if build_step:
+            for step in build_step:
+                subprocess.run(step.split(), check=True, stdout=PIPE)
         sln_file = path.join(project_dir, custom_build_tool["path to .sln"])
         assert(path.exists(sln_file))
     else:
