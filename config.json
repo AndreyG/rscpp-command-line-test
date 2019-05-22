@@ -209,7 +209,13 @@
             },
             "cmake options" : ["-DALLOW_COMMAND_LINE_BUILD=1"]
        },
-        "PhysX-3.4" : {
+       "UnitTestCpp" : {
+            "sources" : {
+                "repo" : "https://github.com/unittest-cpp/unittest-cpp.git",
+                "commit" : "bc5d87f484cac2959b0a0eafbde228e69e828d74"
+            }
+       },
+       "PhysX-3.4" : {
             "sources" : {
                 "repo" : "https://github.com/NVIDIAGameWorks/PhysX-3.4.git",
                 "commit" : "326e24039dd3f063afd211fad770e15bdd5ff4ea"
