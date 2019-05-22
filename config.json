@@ -200,6 +200,14 @@
             },
             "project to check" : "test-*"
         },
+        "SEAL" : {
+            "sources" : {
+                "repo" : "https://github.com/microsoft/SEAL.git",
+                "commit" : "e5fee8fd2fb21242f50300a8a8f32c01709bd613",
+                "root" : "native/src"
+            },
+            "cmake options" : ["-DALLOW_COMMAND_LINE_BUILD=1"]
+       },
         "PhysX-3.4" : {
             "sources" : {
                 "repo" : "https://github.com/NVIDIAGameWorks/PhysX-3.4.git",
