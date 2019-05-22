@@ -200,6 +200,7 @@
             },
             "project to check" : "test-*"
         },
+        "ONNXRuntime" : "ONNXRuntime.json",
         "SEAL" : {
             "sources" : {
                 "repo" : "https://github.com/microsoft/SEAL.git",
