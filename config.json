@@ -2,7 +2,8 @@
     "environment" : {
         "build directory" : "C:/Work/JetBrains.ReSharper.CommandLineTools.2018.3.EAP6.Checked",
         "test directory" : "C:/Work/cli-test",
-        "VS CMake Generator" : "Visual Studio 15 2017 Win64"
+        "VS CMake Generator" : "Visual Studio 15 2017 Win64",
+        "vcpkg" : "C:/Work/vcpkg"
     },
     "projects" : {
         "glslang" : {
@@ -231,6 +232,7 @@
             },
             "project to check" : ["PlistCpp", "NSPlist"]
        },
+       "Sprout" : "Sprout.json",
        "PhysX-3.4" : {
             "sources" : {
                 "repo" : "https://github.com/NVIDIAGameWorks/PhysX-3.4.git",
