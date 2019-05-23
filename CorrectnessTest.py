@@ -66,10 +66,16 @@ def get_sources(project_input, target_dir):
     else:
         raise ValueError("Unknown source kind: {0}".format(kind))
 
-def invoke_cmake(build_dir, cmake_options):
+def invoke_cmake(build_dir, cmake_options, required_dependencies):
     makedirs(build_dir, exist_ok=True)
     chdir(build_dir)
     cmd_line_args = ["cmake", "..", "-G", env["VS CMake Generator"]]
+    if required_dependencies:
+        vcpkg = env.get("vcpkg")
+        if vcpkg:
+            cmd_line_args.append("-DCMAKE_TOOLCHAIN_FILE={0}/scripts/buildsystems/vcpkg.cmake".format(vcpkg))
+        else:
+            raise Exception("project has required dependencies {0}, but environment doesn't containt path to vcpkg".format(required_dependencies))
     if cmake_options:
         cmd_line_args.extend(cmake_options)
     subprocess.run(cmd_line_args, check=True, stdout=PIPE)
@@ -190,7 +196,7 @@ def process_project(project_name, project):
         assert(path.exists(sln_file))
     else:
         build_dir = path.join(project_dir, project.get("build dir", "build"))
-        sln_file = invoke_cmake(build_dir, project.get("cmake options"))
+        sln_file = invoke_cmake(build_dir, project.get("cmake options"), project.get("required dependencies"))
         build_step = project.get("build step")
         if build_step:
             chdir(build_dir)
