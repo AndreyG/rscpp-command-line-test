@@ -224,6 +224,13 @@
                 "path to .sln" : "explore.sln"
              }
        },
+       "Plist" : {
+            "sources" : {
+                "repo" : "https://github.com/microsoft/PlistCpp.git",
+                "commit" : "cdeabc4c68a50897dd26fe7f4f409b58b23775d6"
+            },
+            "project to check" : ["PlistCpp", "NSPlist"]
+       },
        "PhysX-3.4" : {
             "sources" : {
                 "repo" : "https://github.com/NVIDIAGameWorks/PhysX-3.4.git",
