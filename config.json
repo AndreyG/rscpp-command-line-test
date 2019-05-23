@@ -215,6 +215,15 @@
                 "commit" : "bc5d87f484cac2959b0a0eafbde228e69e828d74"
             }
        },
+       "mwt-ds-explore" : {
+            "sources" : {
+                "repo" : "https://github.com/microsoft/mwt-ds-explore-cpp.git",
+                "commit" : "bf384b92c626c352f085539ea3e446a711dcca3f"
+             },
+             "custom build tool" : {
+                "path to .sln" : "explore.sln"
+             }
+       },
        "PhysX-3.4" : {
             "sources" : {
                 "repo" : "https://github.com/NVIDIAGameWorks/PhysX-3.4.git",
