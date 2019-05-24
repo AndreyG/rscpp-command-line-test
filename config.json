@@ -250,6 +250,12 @@
                 "lua_002Eh"
             ]
        },
+       "json-rpc-cxx" : {
+            "sources" : {
+                "repo" : "https://github.com/jsonrpcx/json-rpc-cxx.git",
+                "commit" : "6cb2db06e048ed000ccb66422ec52f3725be41e6"
+            }
+       },
        "PhysX-3.4" : {
             "sources" : {
                 "repo" : "https://github.com/NVIDIAGameWorks/PhysX-3.4.git",
