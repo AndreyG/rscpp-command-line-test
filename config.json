@@ -247,6 +247,16 @@
                 }
             ]
        },
+       "xgboost" : {
+            "sources" : {
+                "repo" : "https://github.com/dmlc/xgboost.git",
+                "commit" : "0ce300e73ad9c586e41762d07f7acdcfa03f323d"
+            },
+            "to skip" : [
+                "input_005Fsplit_005Fshuffle_002Eh",
+                "lua_002Eh"
+            ]
+       },
        "PhysX-3.4" : {
             "sources" : {
                 "repo" : "https://github.com/NVIDIAGameWorks/PhysX-3.4.git",
