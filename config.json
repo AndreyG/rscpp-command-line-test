@@ -238,14 +238,7 @@
                 "repo" : "https://github.com/microsoft/eEVM.git",
                 "commit" : "67e7b107d23340f034f320263c2f9e67761066a3"
             },
-            "required dependencies" : ["boost-multiprecision"],
-            "known errors" : [
-                {
-                    "file": "..\\tests\\harness.cpp", "line": "118",
-                    "reason" : "wrong resolve of operator==(int, SomeEnum)",
-                    "message": "Conversion from lvalue of type 'unsigned long long' to type 'uint256_t const' is ambiguous. Viable candidates:\r\n  boost::multiprecision::number<boost::multiprecision::backends::cpp_int_backend<256, 256, 0, 0>, 0> number<boost::multiprecision::backends::cpp_int_backend<256, 256, 0, 0>, 0>::number<unsigned long long>(const unsigned long long& v, boost::enable_if_c<(boost::is_arithmetic<unsigned long long>::value || is_same<std::basic_string<char>, unsigned long long>::value || is_convertible<unsigned long long, const char*>::value) && !is_convertible<detail::canonical<unsigned long long, boost::multiprecision::backends::cpp_int_backend<256, 256, 0, 0>>::type, boost::multiprecision::backends::cpp_int_backend<256, 256, 0, 0>>::value && !detail::is_restricted_conversion<detail::canonical<unsigned long long, boost::multiprecision::backends::cpp_int_backend<256, 256, 0, 0>>::type, boost::multiprecision::backends::cpp_int_backend<256, 256, 0, 0>>::value>::type*)\r\n  boost::multiprecision::number<boost::multiprecision::backends::cpp_int_backend<256, 256, 0, 0>, 0> number<boost::multiprecision::backends::cpp_int_backend<256, 256, 0, 0>, 0>::number<unsigned long long>(const unsigned long long& v, boost::enable_if_c<is_convertible<detail::canonical<unsigned long long, boost::multiprecision::backends::cpp_int_backend<256, 256, 0, 0>>::type, boost::multiprecision::backends::cpp_int_backend<256, 256, 0, 0>>::value && !detail::is_restricted_conversion<detail::canonical<unsigned long long, boost::multiprecision::backends::cpp_int_backend<256, 256, 0, 0>>::type, boost::multiprecision::backends::cpp_int_backend<256, 256, 0, 0>>::value>::type*) noexcept((noexcept(boost::multiprecision::backends::cpp_int_backend<256, 256, 0, 0>(std::declval<boost::multiprecision::detail::canonical<unsigned long long, boost::multiprecision::backends::cpp_int_backend<256, 256, 0, 0>>::type const&>()))))"
-                }
-            ]
+            "required dependencies" : ["boost-multiprecision"]
        },
        "xgboost" : {
             "sources" : {
