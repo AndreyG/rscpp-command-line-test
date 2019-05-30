@@ -256,6 +256,23 @@
                 "commit" : "6cb2db06e048ed000ccb66422ec52f3725be41e6"
             }
        },
+       "RigelEngine" : {
+            "sources" : {
+                "repo" : "https://github.com/lethal-guitar/RigelEngine.git",
+                "commit" : "67f1ff7faecb565a93b72d1f803c4424c9428e63"
+            },
+            "required dependencies" : ["boost", "sdl2", "sdl2-mixer"],
+            "to skip" : [
+                "resample_005Fneon_002Eh"
+            ],
+            "known errors" : [
+                {
+                    "file": "..\\3rd_party\\speex_resampler\\speex\\resample_sse.h", "line": "57",
+                    "message": "Cannot resolve symbol 'spx_uint32_t'",
+                    "reason" : "wrong order of #include's"
+                }
+            ]
+       },
        "PhysX-3.4" : {
             "sources" : {
                 "repo" : "https://github.com/NVIDIAGameWorks/PhysX-3.4.git",
