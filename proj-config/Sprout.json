@@ -3,7 +3,7 @@
        "repo" : "https://github.com/bolero-MURAKAMI/Sprout.git",
        "commit" : "312a89c4a27f64f379ddf40f50cb3434e6a2b7ab"
     },
-    "required dependencies" : ["Boost"],
+    "required dependencies" : ["boost-mpl", "boost-container"],
     "known errors" : [
         {
             "file": "..\\libs\\weed\\example\\as_tuple.cpp", "line": "50", 
