@@ -67,17 +67,20 @@ def get_sources(project_input, target_dir):
         raise ValueError("Unknown source kind: {0}".format(kind))
 
 def invoke_cmake(build_dir, cmake_options, required_dependencies):
-    makedirs(build_dir, exist_ok=True)
-    chdir(build_dir)
     cmd_line_args = ["cmake", "..", "-G", env["VS CMake Generator"]]
     if required_dependencies:
         vcpkg = env.get("vcpkg")
         if vcpkg:
-            cmd_line_args.append("-DCMAKE_TOOLCHAIN_FILE={0}/scripts/buildsystems/vcpkg.cmake".format(vcpkg))
+            vcpkg_dir = vcpkg["path"]
+            chdir(vcpkg_dir)
+            subprocess.run(["vcpkg", "install"] + required_dependencies + ["--triplet", vcpkg["triplet"]], check=True, stdout=PIPE)
+            cmd_line_args.append("-DCMAKE_TOOLCHAIN_FILE={0}/scripts/buildsystems/vcpkg.cmake".format(vcpkg_dir))
         else:
             raise Exception("project has required dependencies {0}, but environment doesn't containt path to vcpkg".format(required_dependencies))
     if cmake_options:
         cmd_line_args.extend(cmake_options)
+    makedirs(build_dir, exist_ok=True)
+    chdir(build_dir)
     subprocess.run(cmd_line_args, check=True, stdout=PIPE)
     with open(path.join(build_dir, "CMakeCache.txt")) as cmake_cache:
         for line in cmake_cache.readlines():
