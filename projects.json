@@ -1,11 +1,4 @@
 {
-    "environment" : {
-        "build directory" : "C:/Work/JetBrains.ReSharper.CommandLineTools.2018.3.EAP6.Checked",
-        "test directory" : "C:/Work/cli-test",
-        "VS CMake Generator" : "Visual Studio 15 2017 Win64",
-        "vcpkg" : "C:/Work/vcpkg"
-    },
-    "projects" : {
         "glslang" : {
             "sources" : {
                 "repo" : "https://github.com/KhronosGroup/glslang.git",
@@ -286,5 +279,4 @@
                 "PxMetaDataCompare_002Eh"
             ]
         }
-    }
 }
