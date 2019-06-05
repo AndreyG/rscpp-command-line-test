@@ -46,7 +46,7 @@ def run_inspect_code(project_dir, sln_file, project_to_check, msbuild_props):
     #print(subprocess.list2cmdline(args))
     process = Popen(args, stdout=PIPE, text=True)
     start = time.time()
-    (out, err) = process.communicate()
+    out, err = process.communicate()
     exit_code = process.wait()
     end = time.time()
     if exit_code != 0:
@@ -55,7 +55,18 @@ def run_inspect_code(project_dir, sln_file, project_to_check, msbuild_props):
         print("Error:")
         print(err)
     print("Elapsed time: " + duration(start, end))
-    return report_file
+    return report_file, out
+
+
+def count_substring(text, substr):
+    start = 0
+    result = 0
+    while True:
+        start = text.find(substr, start)
+        if start == -1:
+            return result
+        result += 1
+        start += len(substr)
 
 
 proj_config_dir = path.abspath("proj-config")
@@ -69,7 +80,11 @@ def process_project(project_name, project):
 
     project_to_check = project.get("project to check")
     msbuild_props = project.get("msbuild properties")
-    report_file = run_inspect_code(project_dir, sln_file, project_to_check, msbuild_props)
+    report_file, output = run_inspect_code(project_dir, sln_file, project_to_check, msbuild_props)
+    expected_files_count = project["inspected files count"]
+    actual_files_count = count_substring(output, "Inspecting ")
+    if expected_files_count != actual_files_count:
+        print("expected count of inspected files is {0}, but actual is {1}".format(expected_files_count, actual_files_count))
     check_report(report_file, project.get("known errors"))
 
 

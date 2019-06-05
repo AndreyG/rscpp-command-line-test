@@ -18,5 +18,6 @@
             "message": "Expected expression",
             "reason": "RSCPP-20730"
         }
-    ]
+    ],
+    "inspected files count": 1034
 }

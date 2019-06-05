@@ -7,5 +7,6 @@
     "cmake options": [
         "-Dprotobuf_BUILD_TESTS=OFF",
         "-Wno-dev"
-    ]
+    ],
+    "inspected files count": 330
 }

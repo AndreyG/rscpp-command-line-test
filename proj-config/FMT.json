@@ -2,5 +2,6 @@
     "sources": {
         "repo": "https://github.com/fmtlib/fmt.git",
         "commit": "6c95fb35623e47562fdc7f6d8023688290b6f786"
-    }
+    },
+    "inspected files count": 42
 }

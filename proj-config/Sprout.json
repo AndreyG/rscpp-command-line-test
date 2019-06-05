@@ -23,5 +23,6 @@
             "line": "34",
             "message": "No viable function.\r\nArgument types: 'char const* const'.\r\nCandidates considered: \r\n  sprout::basic_string<T, N> string_from_c_str<N, T>(T const* s)\r\n    substitution failed with N = <empty>\r\n  sprout::basic_string<T, N, Traits> string_from_c_str<N, T, Traits>(std::basic_string<T, Traits> const& s)\r\n    substitution failed with N = <empty>\r\n  sprout::basic_string<T, N> string_from_c_str<N, T>(T const* s, std::size_t n)\r\n    has 2 parameters, but is called with 1 argument"
         }
-    ]
+    ],
+    "inspected files count": 151
 }

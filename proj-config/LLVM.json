@@ -25,5 +25,6 @@
             "line": "3975",
             "message": "Member 'Self' is not initialized in this constructor"
         }
-    ]
+    ],
+    "inspected files count": 251
 }
