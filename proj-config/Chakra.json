@@ -7,9 +7,9 @@
         "path to .sln": "Build/Chakra.Core.sln"
     },
     "project to check": "Chakra.Runtime.Debug",
-    "msbuild properties" : {
-        "Configuration" : "Release",
-        "Platform" : "x64"
+    "msbuild properties": {
+        "Configuration": "Release",
+        "Platform": "x64"
     },
     "known errors": [
         {

@@ -2,15 +2,23 @@
     "sources": {
         "repo": "https://github.com/llvm-mirror/llvm.git",
         "commit": "2e5edf4b8d6d685aa79498ce553b1dfc5d79c87c",
-        "subrepo" : {
-            "path" : "tools/clang",
+        "subrepo": {
+            "path": "tools/clang",
             "url": "https://github.com/llvm-mirror/clang.git",
             "commit": "a7ee181aaa8a79b1fece474c733c4f571f0d4ef2"
         }
     },
-    "cmake options": [ "-Thost=x64", "-Wno-dev" ],
-    "build step" : "cmake --build . --target tools/clang/lib/Sema/clangSema",
-    "project to check": [ "ADTTests", "SupportTests", "clangSema", "clangFormat" ],
+    "cmake options": [
+        "-Thost=x64",
+        "-Wno-dev"
+    ],
+    "build step": "cmake --build . --target tools/clang/lib/Sema/clangSema",
+    "project to check": [
+        "ADTTests",
+        "SupportTests",
+        "clangSema",
+        "clangFormat"
+    ],
     "known errors": [
         {
             "file": "..\\tools\\clang\\lib\\Sema\\TreeTransform.h",

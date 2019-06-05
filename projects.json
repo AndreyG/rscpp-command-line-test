@@ -1,281 +1,307 @@
 {
-    "glslang" : {
-        "sources" : {
-            "repo" : "https://github.com/KhronosGroup/glslang.git",
-            "commit" : "1c1c2d643a6b0acaad428e82594ddde9af51c19c"
-          }
-    },
-    "cds" : {
-        "sources" : {
-            "repo" : "https://github.com/khizmax/libcds",
-            "commit" : "e808976c63e4a58b035bafa473201cf77c9a2c46"
+    "glslang": {
+        "sources": {
+            "repo": "https://github.com/KhronosGroup/glslang.git",
+            "commit": "1c1c2d643a6b0acaad428e82594ddde9af51c19c"
         }
     },
-    "args" : {
-        "sources" : {
-            "repo" : "https://github.com/taywee/args",
-            "commit" : "a82a9d6c94d7c58d8b96c65bdc1aba09a4f3e5db"
+    "cds": {
+        "sources": {
+            "repo": "https://github.com/khizmax/libcds",
+            "commit": "e808976c63e4a58b035bafa473201cf77c9a2c46"
         }
     },
-    "replxx" : {
-        "sources" : {
-            "repo" : "https://github.com/AmokHuginnsson/replxx",
-            "commit" : "f719de5ee3c89d9dd955f43a8b95eecebdf9ccd6"
+    "args": {
+        "sources": {
+            "repo": "https://github.com/taywee/args",
+            "commit": "a82a9d6c94d7c58d8b96c65bdc1aba09a4f3e5db"
         }
     },
-    "LLVM" : "LLVM.json",
-    "fmtlib" : "FMT.json",
-    "VTK" : {
-        "sources" : {
-            "repo" : "https://gitlab.kitware.com/vtk/vtk.git",
-            "commit" : "1b8edea9261a9a06b4de164f462b44925cce429e"
-        },
-        "project to check" : "vtkCommonCoreCxxTests"
-    },
-    "ITK" : {
-        "sources" : {
-            "repo" : "https://github.com/InsightSoftwareConsortium/ITK.git",
-            "commit" : "b95b4c41af6ba76bdb26a59967c85fdcc23f1464"
-        },
-        "project to check" : "ITKCommon"
-    },
-    "rocksdb" : {
-        "sources" : {
-            "repo" : "https://github.com/facebook/rocksdb.git",
-            "commit" : "de651035535b6d66276edc97c121cb507e9138cb"
-          }
-    },
-    "OpenSceneGraph" : {
-        "sources" : {
-            "repo" : "https://github.com/openscenegraph/OpenSceneGraph.git",
-            "commit" : "85504b45f6229c2695bc109d771045fcb10fc1e0"
+    "replxx": {
+        "sources": {
+            "repo": "https://github.com/AmokHuginnsson/replxx",
+            "commit": "f719de5ee3c89d9dd955f43a8b95eecebdf9ccd6"
         }
     },
-    "OpenCV" : {
-        "sources" : {
-            "repo" : "https://github.com/opencv/opencv.git",
-            "commit" : "cab15f6c5e32110b1c9ee0359ee7f8801defe53d"
+    "LLVM": "LLVM.json",
+    "fmtlib": "FMT.json",
+    "VTK": {
+        "sources": {
+            "repo": "https://gitlab.kitware.com/vtk/vtk.git",
+            "commit": "1b8edea9261a9a06b4de164f462b44925cce429e"
         },
-        "project to check" : "opencv_test_*"
+        "project to check": "vtkCommonCoreCxxTests"
     },
-    "RxCpp" : {
-        "sources" : {
-            "repo" : "https://github.com/ReactiveX/RxCpp",
-            "commit" : "7930ccc3f5eca55c5866fc7b1d2476f46b8cec17"
+    "ITK": {
+        "sources": {
+            "repo": "https://github.com/InsightSoftwareConsortium/ITK.git",
+            "commit": "b95b4c41af6ba76bdb26a59967c85fdcc23f1464"
         },
-        "known errors" : [
+        "project to check": "ITKCommon"
+    },
+    "rocksdb": {
+        "sources": {
+            "repo": "https://github.com/facebook/rocksdb.git",
+            "commit": "de651035535b6d66276edc97c121cb507e9138cb"
+        }
+    },
+    "OpenSceneGraph": {
+        "sources": {
+            "repo": "https://github.com/openscenegraph/OpenSceneGraph.git",
+            "commit": "85504b45f6229c2695bc109d771045fcb10fc1e0"
+        }
+    },
+    "OpenCV": {
+        "sources": {
+            "repo": "https://github.com/opencv/opencv.git",
+            "commit": "cab15f6c5e32110b1c9ee0359ee7f8801defe53d"
+        },
+        "project to check": "opencv_test_*"
+    },
+    "RxCpp": {
+        "sources": {
+            "repo": "https://github.com/ReactiveX/RxCpp",
+            "commit": "7930ccc3f5eca55c5866fc7b1d2476f46b8cec17"
+        },
+        "known errors": [
             {
-                "file": "..\\Rx\\v2\\src\\rxcpp\\rx-scheduler.hpp", "line": "32",
+                "file": "..\\Rx\\v2\\src\\rxcpp\\rx-scheduler.hpp",
+                "line": "32",
                 "message": "Type 'rxcpp::schedulers::detail::action_type' is incomplete"
             }
         ]
-  },
-    "SQLiteCpp" : {
-        "sources" : {
-            "repo" : "https://github.com/SRombauts/SQLiteCpp",
-            "commit" : "b454170da118d64eed77ee082f0d9aae8c97543d"
+    },
+    "SQLiteCpp": {
+        "sources": {
+            "repo": "https://github.com/SRombauts/SQLiteCpp",
+            "commit": "b454170da118d64eed77ee082f0d9aae8c97543d"
         }
     },
-    "argh" : {
-        "sources" : {
-            "repo" : "https://github.com/adishavit/argh",
-            "commit" : "0775441d436749263279626a1c820267940188f7"
+    "argh": {
+        "sources": {
+            "repo": "https://github.com/adishavit/argh",
+            "commit": "0775441d436749263279626a1c820267940188f7"
         }
     },
-    "Eigen3" : {
-        "sources" : {
-            "kind" : "zip",
-            "url" : "http://bitbucket.org/eigen/eigen/get/3.3.5.zip",
-            "root" : "eigen-eigen-b3f3d4950030"
+    "Eigen3": {
+        "sources": {
+            "kind": "zip",
+            "url": "http://bitbucket.org/eigen/eigen/get/3.3.5.zip",
+            "root": "eigen-eigen-b3f3d4950030"
         },
-        "project to check" : "cxx11_*",
-        "cmake options" : ["-DEIGEN_TEST_CXX11=ON"]
+        "project to check": "cxx11_*",
+        "cmake options": [
+            "-DEIGEN_TEST_CXX11=ON"
+        ]
     },
-    "X265" : {
-        "sources" : {
-            "kind" : "zip",
-            "url" : "https://bitbucket.org/multicoreware/x265/get/2.9.zip",
-            "root" : "multicoreware-x265-f9681d731f2e/source"
+    "X265": {
+        "sources": {
+            "kind": "zip",
+            "url": "https://bitbucket.org/multicoreware/x265/get/2.9.zip",
+            "root": "multicoreware-x265-f9681d731f2e/source"
         },
-        "project to check" : ["common", "encoder"]
+        "project to check": [
+            "common",
+            "encoder"
+        ]
     },
-    "DependencyChecker" : {
-        "sources" : {
-            "repo" : "https://github.com/tomtom-international/cpp-dependencies.git",
-            "commit" : "e41dc70c62b2d6e3fea014b3a0e62dc64fed6d5f"
-          }
+    "DependencyChecker": {
+        "sources": {
+            "repo": "https://github.com/tomtom-international/cpp-dependencies.git",
+            "commit": "e41dc70c62b2d6e3fea014b3a0e62dc64fed6d5f"
+        }
     },
-    "ZSTD" : {
-        "sources" : {
-            "repo" : "https://github.com/facebook/zstd.git",
-            "commit" : "787532b91ac107e77340c6061cb6964283b89210",
-            "root" : "build/cmake"
+    "ZSTD": {
+        "sources": {
+            "repo": "https://github.com/facebook/zstd.git",
+            "commit": "787532b91ac107e77340c6061cb6964283b89210",
+            "root": "build/cmake"
         },
-        "cmake options" : ["-DZSTD_BUILD_TESTS=ON"]
+        "cmake options": [
+            "-DZSTD_BUILD_TESTS=ON"
+        ]
     },
-    "Protobuf" : "Protobuf.json",
-    "Chakra.Core" : "Chakra.json",
-    "CoreCLR" : {
-        "sources" : {
-            "repo" : "https://github.com/dotnet/coreclr.git",
-            "commit" : "d07633f53b51a30d294c4afe2b0b7ba5b563c134"
+    "Protobuf": "Protobuf.json",
+    "Chakra.Core": "Chakra.json",
+    "CoreCLR": {
+        "sources": {
+            "repo": "https://github.com/dotnet/coreclr.git",
+            "commit": "d07633f53b51a30d294c4afe2b0b7ba5b563c134"
         },
-        "custom build tool" : {
-            "script" : ["build.cmd", "-configureonly"],
-            "path to .sln" : "bin/obj/Windows_NT.x64.Debug/CoreCLR.sln"
+        "custom build tool": {
+            "script": [
+                "build.cmd",
+                "-configureonly"
+            ],
+            "path to .sln": "bin/obj/Windows_NT.x64.Debug/CoreCLR.sln"
         },
-        "project to check" : ["clrgc", "cordbdi"]
+        "project to check": [
+            "clrgc",
+            "cordbdi"
+        ]
     },
-    "Catch2" : {
-        "sources" : {
-            "repo" : "https://github.com/catchorg/Catch2.git",
-            "commit" : "4902cd721586822ded795afe0c418c553137306a"
+    "Catch2": {
+        "sources": {
+            "repo": "https://github.com/catchorg/Catch2.git",
+            "commit": "4902cd721586822ded795afe0c418c553137306a"
         },
-        "to skip" : [
+        "to skip": [
             "catch_005Fobjc_002A"
         ]
     },
-    "Google-Brotli" : {
-        "sources" : {
-            "repo" : "https://github.com/google/brotli.git",
-            "commit" : "5805f99a533a8f8118699c0100d8c102f3605f65"
+    "Google-Brotli": {
+        "sources": {
+            "repo": "https://github.com/google/brotli.git",
+            "commit": "5805f99a533a8f8118699c0100d8c102f3605f65"
         },
-        "build dir" : "out"
+        "build dir": "out"
     },
-    "Google-RE2" : {
-        "sources" : {
-            "repo" : "https://github.com/google/re2.git",
-            "commit" : "e860767c86e577b87deadf24cc4567ea83c4f162"
+    "Google-RE2": {
+        "sources": {
+            "repo": "https://github.com/google/re2.git",
+            "commit": "e860767c86e577b87deadf24cc4567ea83c4f162"
         },
-        "build dir" : "out"
+        "build dir": "out"
     },
-    "Snappy" : {
-        "sources" : {
-            "repo" : "https://github.com/google/snappy.git",
-            "commit" : "ea660b57d65d68d521287c903459b6dd3b2804d0"
+    "Snappy": {
+        "sources": {
+            "repo": "https://github.com/google/snappy.git",
+            "commit": "ea660b57d65d68d521287c903459b6dd3b2804d0"
         }
     },
-    "dlib" : {
-        "sources" : {
-            "repo" : "https://github.com/davisking/dlib.git",
-            "commit" : "99af7b9d54f47fc0609490fde09b6c20fde6ae62"
+    "dlib": {
+        "sources": {
+            "repo": "https://github.com/davisking/dlib.git",
+            "commit": "99af7b9d54f47fc0609490fde09b6c20fde6ae62"
         }
     },
-    "imgui" : {
-        "sources" : {
-            "repo" : "https://github.com/ocornut/imgui.git",
-            "commit" : "ed240c910bb1019a23c59806f7856bebe181cef7"
+    "imgui": {
+        "sources": {
+            "repo": "https://github.com/ocornut/imgui.git",
+            "commit": "ed240c910bb1019a23c59806f7856bebe181cef7"
         },
-        "custom build tool" : {
-            "path to .sln" : "examples/imgui_examples.sln"
+        "custom build tool": {
+            "path to .sln": "examples/imgui_examples.sln"
         }
     },
-    "shaderc" : "Shaderc.json",
-    "benchmark" : "Benchmark.json",
-    "wil" : {
-        "sources" : {
-            "repo" : "https://github.com/microsoft/wil.git",
-            "commit" : "ade910fb44f0b23c03111a2838c2148d326f5622"
+    "shaderc": "Shaderc.json",
+    "benchmark": "Benchmark.json",
+    "wil": {
+        "sources": {
+            "repo": "https://github.com/microsoft/wil.git",
+            "commit": "ade910fb44f0b23c03111a2838c2148d326f5622"
         }
     },
-    "draco" : {
-        "sources" : {
-            "repo" : "https://github.com/google/draco.git",
-            "commit" : "785c9c4aa2b952236c29ad639901dbbaf216da38"
+    "draco": {
+        "sources": {
+            "repo": "https://github.com/google/draco.git",
+            "commit": "785c9c4aa2b952236c29ad639901dbbaf216da38"
         },
-        "to skip" : [
+        "to skip": [
             "mesh_005F_002A_005Fhelpers_002Eh"
         ]
     },
-    "GLM" : {
-        "sources" : {
-            "repo" : "https://github.com/g-truc/glm.git",
-            "commit" : "fce2abd01ce21063bd25ba67c9318be83bf48813"
+    "GLM": {
+        "sources": {
+            "repo": "https://github.com/g-truc/glm.git",
+            "commit": "fce2abd01ce21063bd25ba67c9318be83bf48813"
         },
-        "project to check" : "test-*"
+        "project to check": "test-*"
     },
-    "ONNXRuntime" : "ONNXRuntime.json",
-    "SEAL" : {
-        "sources" : {
-            "repo" : "https://github.com/microsoft/SEAL.git",
-            "commit" : "e5fee8fd2fb21242f50300a8a8f32c01709bd613",
-            "root" : "native/src"
+    "ONNXRuntime": "ONNXRuntime.json",
+    "SEAL": {
+        "sources": {
+            "repo": "https://github.com/microsoft/SEAL.git",
+            "commit": "e5fee8fd2fb21242f50300a8a8f32c01709bd613",
+            "root": "native/src"
         },
-        "cmake options" : ["-DALLOW_COMMAND_LINE_BUILD=1"]
+        "cmake options": [
+            "-DALLOW_COMMAND_LINE_BUILD=1"
+        ]
     },
-    "UnitTestCpp" : {
-        "sources" : {
-            "repo" : "https://github.com/unittest-cpp/unittest-cpp.git",
-            "commit" : "bc5d87f484cac2959b0a0eafbde228e69e828d74"
+    "UnitTestCpp": {
+        "sources": {
+            "repo": "https://github.com/unittest-cpp/unittest-cpp.git",
+            "commit": "bc5d87f484cac2959b0a0eafbde228e69e828d74"
         }
     },
-    "mwt-ds-explore" : {
-        "sources" : {
-            "repo" : "https://github.com/microsoft/mwt-ds-explore-cpp.git",
-            "commit" : "bf384b92c626c352f085539ea3e446a711dcca3f"
-          },
-          "custom build tool" : {
-            "path to .sln" : "explore.sln"
-          }
-    },
-    "Plist" : {
-        "sources" : {
-            "repo" : "https://github.com/microsoft/PlistCpp.git",
-            "commit" : "cdeabc4c68a50897dd26fe7f4f409b58b23775d6"
+    "mwt-ds-explore": {
+        "sources": {
+            "repo": "https://github.com/microsoft/mwt-ds-explore-cpp.git",
+            "commit": "bf384b92c626c352f085539ea3e446a711dcca3f"
         },
-        "project to check" : ["PlistCpp", "NSPlist"]
+        "custom build tool": {
+            "path to .sln": "explore.sln"
+        }
     },
-    "Sprout" : "Sprout.json",
-    "eEVM" : {
-        "sources" : {
-            "repo" : "https://github.com/microsoft/eEVM.git",
-            "commit" : "67e7b107d23340f034f320263c2f9e67761066a3"
+    "Plist": {
+        "sources": {
+            "repo": "https://github.com/microsoft/PlistCpp.git",
+            "commit": "cdeabc4c68a50897dd26fe7f4f409b58b23775d6"
         },
-        "required dependencies" : ["boost-multiprecision"]
+        "project to check": [
+            "PlistCpp",
+            "NSPlist"
+        ]
     },
-    "xgboost" : {
-        "sources" : {
-            "repo" : "https://github.com/dmlc/xgboost.git",
-            "commit" : "0ce300e73ad9c586e41762d07f7acdcfa03f323d"
+    "Sprout": "Sprout.json",
+    "eEVM": {
+        "sources": {
+            "repo": "https://github.com/microsoft/eEVM.git",
+            "commit": "67e7b107d23340f034f320263c2f9e67761066a3"
         },
-        "to skip" : [
+        "required dependencies": [
+            "boost-multiprecision"
+        ]
+    },
+    "xgboost": {
+        "sources": {
+            "repo": "https://github.com/dmlc/xgboost.git",
+            "commit": "0ce300e73ad9c586e41762d07f7acdcfa03f323d"
+        },
+        "to skip": [
             "input_005Fsplit_005Fshuffle_002Eh",
             "lua_002Eh"
         ]
     },
-    "json-rpc-cxx" : {
-        "sources" : {
-            "repo" : "https://github.com/jsonrpcx/json-rpc-cxx.git",
-            "commit" : "6cb2db06e048ed000ccb66422ec52f3725be41e6"
+    "json-rpc-cxx": {
+        "sources": {
+            "repo": "https://github.com/jsonrpcx/json-rpc-cxx.git",
+            "commit": "6cb2db06e048ed000ccb66422ec52f3725be41e6"
         }
     },
-    "RigelEngine" : {
-        "sources" : {
-            "repo" : "https://github.com/lethal-guitar/RigelEngine.git",
-            "commit" : "67f1ff7faecb565a93b72d1f803c4424c9428e63"
+    "RigelEngine": {
+        "sources": {
+            "repo": "https://github.com/lethal-guitar/RigelEngine.git",
+            "commit": "67f1ff7faecb565a93b72d1f803c4424c9428e63"
         },
-        "required dependencies" : ["boost-program-options", "sdl2", "sdl2-mixer"],
-        "to skip" : [
+        "required dependencies": [
+            "boost-program-options",
+            "sdl2",
+            "sdl2-mixer"
+        ],
+        "to skip": [
             "resample_005Fneon_002Eh"
         ],
-        "known errors" : [
+        "known errors": [
             {
-                "file": "..\\3rd_party\\speex_resampler\\speex\\resample_sse.h", "line": "57",
+                "file": "..\\3rd_party\\speex_resampler\\speex\\resample_sse.h",
+                "line": "57",
                 "message": "Cannot resolve symbol 'spx_uint32_t'",
-                "reason" : "wrong order of #include's"
+                "reason": "wrong order of #include's"
             }
         ]
     },
-    "PhysX-3.4" : {
-        "sources" : {
-            "repo" : "https://github.com/NVIDIAGameWorks/PhysX-3.4.git",
-            "commit" : "326e24039dd3f063afd211fad770e15bdd5ff4ea"
+    "PhysX-3.4": {
+        "sources": {
+            "repo": "https://github.com/NVIDIAGameWorks/PhysX-3.4.git",
+            "commit": "326e24039dd3f063afd211fad770e15bdd5ff4ea"
         },
-        "custom build tool" : {
-            "path to .sln" : "PhysX_3.4/Source/compiler/vc15win64/PhysX.sln"
+        "custom build tool": {
+            "path to .sln": "PhysX_3.4/Source/compiler/vc15win64/PhysX.sln"
         },
-        "project to check" : "PhysX",
-        "to skip" : [
+        "project to check": "PhysX",
+        "to skip": [
             "PxMetaDataCompare_002Eh"
         ]
     }

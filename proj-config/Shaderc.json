@@ -4,14 +4,19 @@
         "commit": "59a49bc5cdff252c6e56e2176255398ace226a90",
         "custom update source script": "python ./utils/git-sync-deps"
     },
-    "cmake options" : ["-Wno-dev"],
-    "build step" : "cmake --build . --target glslc_exe",
-    "to skip" : [ "text_005Fword_005Fget_005Ftest_002Ecpp" ],
-    "known errors" : [
+    "cmake options": [
+        "-Wno-dev"
+    ],
+    "build step": "cmake --build . --target glslc_exe",
+    "to skip": [
+        "text_005Fword_005Fget_005Ftest_002Ecpp"
+    ],
+    "known errors": [
         {
-            "file": "..\\glslc\\src\\main.cc", "line": "202",
+            "file": "..\\glslc\\src\\main.cc",
+            "line": "202",
             "message": "Expected expression",
-            "reason" : "RSCPP-20730"
+            "reason": "RSCPP-20730"
         }
     ]
 }

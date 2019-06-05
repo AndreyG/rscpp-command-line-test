@@ -1,37 +1,111 @@
 {
-    "sources" : {
-        "repo" : "https://github.com/Microsoft/onnxruntime",
-        "commit" : "867eda52621b7e1009732d7f78e5603ecccabb7e"
+    "sources": {
+        "repo": "https://github.com/Microsoft/onnxruntime",
+        "commit": "867eda52621b7e1009732d7f78e5603ecccabb7e"
     },
-    "custom build tool" : {
-        "script" : ["build.bat", "--update"],
-        "build step" : [
+    "custom build tool": {
+        "script": [
+            "build.bat",
+            "--update"
+        ],
+        "build step": [
             "cmake --build build/Windows/Debug --target onnxruntime_framework",
             "cmake --build build/Windows/Debug --target eigen",
             "cmake --build build/Windows/Debug --target onnx_test_data_proto"
         ],
-        "path to .sln" : "Build/Windows/Debug/onnxruntime.sln"
+        "path to .sln": "Build/Windows/Debug/onnxruntime.sln"
     },
-    "known errors" : [
-        {"file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc", "line": "107", "message": "Cannot resolve symbol 'LL'"
-         , "reason" : "RSCPP-26399"
+    "known errors": [
+        {
+            "file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc",
+            "line": "107",
+            "message": "Cannot resolve symbol 'LL'",
+            "reason": "RSCPP-26399"
         },
-        {"file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc", "line": "107", "message": "Expected ',' or ')'"},
-        {"file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc", "line": "110", "message": "Cannot resolve symbol 'LL'"},
-        {"file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc", "line": "110", "message": "Expected ',' or ')'"},
-        {"file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc", "line": "113", "message": "Cannot resolve symbol 'LL'"},
-        {"file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc", "line": "113", "message": "Expected ',' or ')'"},
-        {"file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc", "line": "116", "message": "Cannot resolve symbol 'LL'"},
-        {"file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc", "line": "116", "message": "Expected ',' or ')'"},
-        {"file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc", "line": "119", "message": "Cannot resolve symbol 'LL'"},
-        {"file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc", "line": "119", "message": "Expected ',' or ')'"},
-        {"file": "..\\..\\..\\onnxruntime\\core\\graph\\function_inliner.h", "line": "7", "message": "Cannot find file 'rewrite_rule.h' in search paths:\r\nC:\\work\\rscpp-command-line-test\\projects\\ONNXRuntime\\include\\onnxruntime\\core\\graph\r\nC:\\work\\rscpp-command-line-test\\projects\\ONNXRuntime\\onnxruntime\\core\\graph\r\n"},
-        {"file": "..\\..\\..\\onnxruntime\\core\\graph\\function_inliner.h", "line": "16", "message": "Cannot resolve symbol 'RewriteRule'"},
-        {"file": "..\\..\\..\\onnxruntime\\core\\graph\\function_inliner.h", "line": "19", "message": "Cannot resolve symbol 'RewriteRule'"},
-        {"file": "..\\..\\..\\onnxruntime\\core\\graph\\function_inliner.h", "line": "21", "message": "Type 'onnxruntime::Graph' is incomplete"},
-        {"file": "..\\..\\..\\onnxruntime\\core\\graph\\function_inliner.h", "line": "21", "message": "Function 'Status onnxruntime::FunctionInliner::Apply(onnxruntime::Graph, onnxruntime::Node*, bool*)' has the 'override' specifier but does not override a base class member"},
-        {"file": "..\\..\\..\\onnxruntime\\test\\proto\\tml.proto", "line": "3", "message": "File not found in project"},
-        {"file": "..\\..\\..\\onnxruntime\\test\\proto\\tml.proto", "line": "3", "message": "Cannot resolve symbol"},
-        {"file": "..\\..\\..\\onnxruntime\\test\\proto\\tml.proto", "line": "94", "message": "Cannot resolve symbol"}
+        {
+            "file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc",
+            "line": "107",
+            "message": "Expected ',' or ')'"
+        },
+        {
+            "file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc",
+            "line": "110",
+            "message": "Cannot resolve symbol 'LL'"
+        },
+        {
+            "file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc",
+            "line": "110",
+            "message": "Expected ',' or ')'"
+        },
+        {
+            "file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc",
+            "line": "113",
+            "message": "Cannot resolve symbol 'LL'"
+        },
+        {
+            "file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc",
+            "line": "113",
+            "message": "Expected ',' or ')'"
+        },
+        {
+            "file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc",
+            "line": "116",
+            "message": "Cannot resolve symbol 'LL'"
+        },
+        {
+            "file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc",
+            "line": "116",
+            "message": "Expected ',' or ')'"
+        },
+        {
+            "file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc",
+            "line": "119",
+            "message": "Cannot resolve symbol 'LL'"
+        },
+        {
+            "file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc",
+            "line": "119",
+            "message": "Expected ',' or ')'"
+        },
+        {
+            "file": "..\\..\\..\\onnxruntime\\core\\graph\\function_inliner.h",
+            "line": "7",
+            "message": "Cannot find file 'rewrite_rule.h' in search paths:\r\nC:\\work\\rscpp-command-line-test\\projects\\ONNXRuntime\\include\\onnxruntime\\core\\graph\r\nC:\\work\\rscpp-command-line-test\\projects\\ONNXRuntime\\onnxruntime\\core\\graph\r\n"
+        },
+        {
+            "file": "..\\..\\..\\onnxruntime\\core\\graph\\function_inliner.h",
+            "line": "16",
+            "message": "Cannot resolve symbol 'RewriteRule'"
+        },
+        {
+            "file": "..\\..\\..\\onnxruntime\\core\\graph\\function_inliner.h",
+            "line": "19",
+            "message": "Cannot resolve symbol 'RewriteRule'"
+        },
+        {
+            "file": "..\\..\\..\\onnxruntime\\core\\graph\\function_inliner.h",
+            "line": "21",
+            "message": "Type 'onnxruntime::Graph' is incomplete"
+        },
+        {
+            "file": "..\\..\\..\\onnxruntime\\core\\graph\\function_inliner.h",
+            "line": "21",
+            "message": "Function 'Status onnxruntime::FunctionInliner::Apply(onnxruntime::Graph, onnxruntime::Node*, bool*)' has the 'override' specifier but does not override a base class member"
+        },
+        {
+            "file": "..\\..\\..\\onnxruntime\\test\\proto\\tml.proto",
+            "line": "3",
+            "message": "File not found in project"
+        },
+        {
+            "file": "..\\..\\..\\onnxruntime\\test\\proto\\tml.proto",
+            "line": "3",
+            "message": "Cannot resolve symbol"
+        },
+        {
+            "file": "..\\..\\..\\onnxruntime\\test\\proto\\tml.proto",
+            "line": "94",
+            "message": "Cannot resolve symbol"
+        }
     ]
 }
