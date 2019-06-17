@@ -317,6 +317,14 @@
         "inspected files count": 13,
         "mem traffic": 870
     },
+    "RapidJSON": {
+        "sources": {
+            "repo": "https://github.com/Tencent/rapidjson.git",
+            "commit": "4b3d7c2f42142f10b888e580c515f60ca98e2ee9"
+        },
+        "inspected files count": 54,
+        "mem traffic": 2563
+    },
     "RigelEngine": "RigelEngine.json",
     "PhysX-3.4": "PhysX.json"
 }
