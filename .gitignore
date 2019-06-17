@@ -1,5 +1,6 @@
 ﻿/projects
 /caches-home
+/snapshots-home
 /out.txt
 /err.txt
 /__pycache__

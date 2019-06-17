@@ -1,5 +1,5 @@
-from argparse import ArgumentParser
 from subprocess import Popen, PIPE
+import subprocess
 from os import path
 import xml.etree.ElementTree as ET
 import json
@@ -36,14 +36,10 @@ def check_report(report_file, known_errors):
             print_errors("Unexpected", errors)
 
 
-def duration(start, end):
-    minutes, seconds = divmod(end - start, 60)
-    return "{:02}:{:02}".format(int(minutes), int(seconds))
-
-
 def run_inspect_code(project_dir, sln_file, project_to_check, msbuild_props):
     args, report_file = common.inspect_code_run_arguments(project_dir, sln_file, project_to_check, msbuild_props)
-    #print(subprocess.list2cmdline(args))
+    args.insert(0, common.inspect_code_path)
+    print(subprocess.list2cmdline(args))
     process = Popen(args, stdout=PIPE, text=True)
     start = time.time()
     out, err = process.communicate()
@@ -54,27 +50,12 @@ def run_inspect_code(project_dir, sln_file, project_to_check, msbuild_props):
     if err:
         print("Error:")
         print(err)
-    print("Elapsed time: " + duration(start, end))
+    print("Elapsed time: " + common.duration(start, end))
     return report_file, out
 
 
-def count_substring(text, substr):
-    start = 0
-    result = 0
-    while True:
-        start = text.find(substr, start)
-        if start == -1:
-            return result
-        result += 1
-        start += len(substr)
-
-
-proj_config_dir = path.abspath("proj-config")
-
 def process_project(project_name, project):
-    if isinstance(project, str):
-        with open(path.join(proj_config_dir, project)) as pf:
-            project = json.load(pf)
+    project = common.read_conf_if_needed(project)
 
     project_dir, sln_file = common.prepare_project(project_name, project)
 
@@ -82,25 +63,20 @@ def process_project(project_name, project):
     msbuild_props = project.get("msbuild properties")
     report_file, output = run_inspect_code(project_dir, sln_file, project_to_check, msbuild_props)
     expected_files_count = project["inspected files count"]
-    actual_files_count = count_substring(output, "Inspecting ")
+    actual_files_count = common.inspected_files_count(output)
     if expected_files_count != actual_files_count:
         print("expected count of inspected files is {0}, but actual is {1}".format(expected_files_count, actual_files_count))
     check_report(report_file, project.get("known errors"))
 
 
-with open("projects.json") as f:
-    projects = json.load(f)
-
-argparser = ArgumentParser()
-argparser.add_argument("-p", "--project", dest="project")
-args = argparser.parse_args()
-
-if args.project:
-    process_project(args.project, projects[args.project])
+if common.args.project:
+    process_project(common.args.project, common.projects[common.args.project])
 else:
     start_time = time.time()
-    for project_name, project in projects.items():
+
+    for project_name, project in common.projects.items():
         print("processing project {0}...".format(project_name))
         process_project(project_name, project)
         print('-------------------------------------------------------')
-    print("Total time: " + duration(start_time, time.time()))
+
+    print("Total time: " + common.duration(start_time, time.time()))

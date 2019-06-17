@@ -108,5 +108,6 @@
             "message": "Cannot resolve symbol"
         }
     ],
-    "inspected files count": 1064
+    "inspected files count": 1064,
+    "mem traffic": 23225
 }

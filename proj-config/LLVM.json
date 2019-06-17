@@ -26,5 +26,6 @@
             "message": "Member 'Self' is not initialized in this constructor"
         }
     ],
-    "inspected files count": 251
+    "inspected files count": 251,
+    "mem traffic": 20168
 }

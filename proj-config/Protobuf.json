@@ -8,5 +8,6 @@
         "-Dprotobuf_BUILD_TESTS=OFF",
         "-Wno-dev"
     ],
-    "inspected files count": 330
+    "inspected files count": 330,
+    "mem traffic": 6946
 }

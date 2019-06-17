@@ -18,5 +18,6 @@
             "message": "No corresponding file with the \"Precompiled Header\" property set to \"Create\" (/Yc) is found"
         }
     ],
-    "inspected files count": 51
+    "inspected files count": 51,
+    "mem traffic": 7700
 }

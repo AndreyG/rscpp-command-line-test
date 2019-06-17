@@ -1,0 +1,15 @@
+{
+    "sources": {
+        "repo": "https://github.com/NVIDIAGameWorks/PhysX-3.4.git",
+        "commit": "326e24039dd3f063afd211fad770e15bdd5ff4ea"
+    },
+    "custom build tool": {
+        "path to .sln": "PhysX_3.4/Source/compiler/vc15win64/PhysX.sln"
+    },
+    "project to check": "PhysX",
+    "to skip": [
+        "PxMetaDataCompare_002Eh"
+    ],
+    "inspected files count": 179,
+    "mem traffic": 2880
+}

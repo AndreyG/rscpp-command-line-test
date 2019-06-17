@@ -5,10 +5,14 @@ import xml.etree.ElementTree as ET
 import json
 import requests
 import io
+from argparse import ArgumentParser
 from zipfile import ZipFile
 
 with open("environment.json") as f:
     env = json.load(f)
+
+with open("projects.json") as f:
+    projects = json.load(f)
 
 resharper_build = env["build directory"]
 inspect_code_path = path.join(resharper_build, "inspectcode.x86.exe")
@@ -61,6 +65,7 @@ def get_sources(project_input, target_dir):
     else:
         raise ValueError("Unknown source kind: {0}".format(kind))
 
+
 def invoke_cmake(build_dir, cmake_options, required_dependencies):
     cmd_line_args = ["cmake", "..", "-G", env["VS CMake Generator"]]
     if required_dependencies:
@@ -87,11 +92,19 @@ def invoke_cmake(build_dir, cmake_options, required_dependencies):
                 return sln_file
     
 
+proj_config_dir = path.abspath("proj-config")
+
+def read_conf_if_needed(project):
+    if isinstance(project, str):
+        with open(path.join(proj_config_dir, project)) as pf:
+            return json.load(pf)
+    else:
+        return project
+
+
 def inspect_code_run_arguments(project_dir, sln_file, project_to_check, msbuild_props):
     report_file = path.join(project_dir, "resharper-report.xml")
-    args = [inspect_code_path, "-s=ERROR", "-f=Xml"]
-    args.append("-o=" + report_file)
-    args.append("--caches-home=" + caches_home)
+    args = ["-s=ERROR", "-f=Xml", "-o=" + report_file, "--caches-home=" + caches_home]
     if project_to_check:
         if isinstance(project_to_check, list):
             for p in project_to_check:
@@ -105,6 +118,21 @@ def inspect_code_run_arguments(project_dir, sln_file, project_to_check, msbuild_
 
     args.append(sln_file)
     return args, report_file
+
+
+def count_substring(text, substr):
+    start = 0
+    result = 0
+    while True:
+        start = text.find(substr, start)
+        if start == -1:
+            return result
+        result += 1
+        start += len(substr)
+
+
+def inspected_files_count(inspect_code_output):
+    return count_substring(inspect_code_output, "Inspecting ")
 
 
 def add_entry(node, key, value):
@@ -155,3 +183,13 @@ def prepare_project(project_name, project):
 
     generate_settings(project.get("to skip")).write(sln_file + ".DotSettings")
     return project_dir, sln_file
+
+
+def duration(start, end):
+    minutes, seconds = divmod(end - start, 60)
+    return "{:02}:{:02}".format(int(minutes), int(seconds))
+
+
+argparser = ArgumentParser()
+argparser.add_argument("-p", "--project", dest="project")
+args = argparser.parse_args()

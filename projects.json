@@ -4,28 +4,32 @@
             "repo": "https://github.com/KhronosGroup/glslang.git",
             "commit": "1c1c2d643a6b0acaad428e82594ddde9af51c19c"
         },
-        "inspected files count": 112
+        "inspected files count": 112,
+        "mem traffic": 3040
     },
     "cds": {
         "sources": {
             "repo": "https://github.com/khizmax/libcds",
             "commit": "e808976c63e4a58b035bafa473201cf77c9a2c46"
         },
-        "inspected files count": 20
+        "inspected files count": 20,
+        "mem traffic": 590
     },
     "args": {
         "sources": {
             "repo": "https://github.com/taywee/args",
             "commit": "a82a9d6c94d7c58d8b96c65bdc1aba09a4f3e5db"
         },
-        "inspected files count": 6
+        "inspected files count": 6,
+        "mem traffic": 580
     },
     "replxx": {
         "sources": {
             "repo": "https://github.com/AmokHuginnsson/replxx",
             "commit": "f719de5ee3c89d9dd955f43a8b95eecebdf9ccd6"
         },
-        "inspected files count": 13
+        "inspected files count": 13,
+        "mem traffic": 520
     },
     "LLVM": "LLVM.json",
     "fmtlib": "FMT.json",
@@ -35,7 +39,8 @@
             "commit": "1b8edea9261a9a06b4de164f462b44925cce429e"
         },
         "project to check": "vtkCommonCoreCxxTests",
-        "inspected files count": 56
+        "inspected files count": 56,
+        "mem traffic": 5500
     },
     "ITK": {
         "sources": {
@@ -43,21 +48,24 @@
             "commit": "b95b4c41af6ba76bdb26a59967c85fdcc23f1464"
         },
         "project to check": "ITKCommon",
-        "inspected files count": 90
+        "inspected files count": 90,
+        "mem traffic": 9556
     },
     "rocksdb": {
         "sources": {
             "repo": "https://github.com/facebook/rocksdb.git",
             "commit": "de651035535b6d66276edc97c121cb507e9138cb"
         },
-        "inspected files count": 625
+        "inspected files count": 625,
+        "mem traffic": 24000
     },
     "OpenSceneGraph": {
         "sources": {
             "repo": "https://github.com/openscenegraph/OpenSceneGraph.git",
             "commit": "85504b45f6229c2695bc109d771045fcb10fc1e0"
         },
-        "inspected files count": 1770
+        "inspected files count": 1770,
+        "mem traffic": 25800
     },
     "OpenCV": {
         "sources": {
@@ -65,7 +73,8 @@
             "commit": "cab15f6c5e32110b1c9ee0359ee7f8801defe53d"
         },
         "project to check": "opencv_test_*",
-        "inspected files count": 309
+        "inspected files count": 309,
+        "mem traffic": 12630
     },
     "RxCpp": {
         "sources": {
@@ -79,21 +88,24 @@
                 "message": "Type 'rxcpp::schedulers::detail::action_type' is incomplete"
             }
         ],
-        "inspected files count": 246
+        "inspected files count": 246,
+        "mem traffic": 8566
     },
     "SQLiteCpp": {
         "sources": {
             "repo": "https://github.com/SRombauts/SQLiteCpp",
             "commit": "b454170da118d64eed77ee082f0d9aae8c97543d"
         },
-        "inspected files count": 18
+        "inspected files count": 18,
+        "mem traffic": 1770
     },
     "argh": {
         "sources": {
             "repo": "https://github.com/adishavit/argh",
             "commit": "0775441d436749263279626a1c820267940188f7"
         },
-        "inspected files count": 2
+        "inspected files count": 2,
+        "mem traffic": 420
     },
     "Eigen3": {
         "sources": {
@@ -105,7 +117,8 @@
         "cmake options": [
             "-DEIGEN_TEST_CXX11=ON"
         ],
-        "inspected files count": 82
+        "inspected files count": 82,
+        "mem traffic": 4938
     },
     "X265": {
         "sources": {
@@ -117,14 +130,16 @@
             "common",
             "encoder"
         ],
-        "inspected files count": 93
+        "inspected files count": 93,
+        "mem traffic" : 2261
     },
     "DependencyChecker": {
         "sources": {
             "repo": "https://github.com/tomtom-international/cpp-dependencies.git",
             "commit": "e41dc70c62b2d6e3fea014b3a0e62dc64fed6d5f"
         },
-        "inspected files count": 20
+        "inspected files count": 20,
+        "mem traffic" : 640
     },
     "ZSTD": {
         "sources": {
@@ -135,28 +150,12 @@
         "cmake options": [
             "-DZSTD_BUILD_TESTS=ON"
         ],
-        "inspected files count": 123
+        "inspected files count": 123,
+        "mem traffic" : 2000
     },
     "Protobuf": "Protobuf.json",
     "Chakra.Core": "Chakra.json",
-    "CoreCLR": {
-        "sources": {
-            "repo": "https://github.com/dotnet/coreclr.git",
-            "commit": "d07633f53b51a30d294c4afe2b0b7ba5b563c134"
-        },
-        "custom build tool": {
-            "script": [
-                "build.cmd",
-                "-configureonly"
-            ],
-            "path to .sln": "bin/obj/Windows_NT.x64.Debug/CoreCLR.sln"
-        },
-        "project to check": [
-            "clrgc",
-            "cordbdi"
-        ],
-        "inspected files count": 90
-    },
+    "CoreCLR": "CoreCLR.json",
     "Catch2": {
         "sources": {
             "repo": "https://github.com/catchorg/Catch2.git",
@@ -165,7 +164,8 @@
         "to skip": [
             "catch_005Fobjc_002A"
         ],
-        "inspected files count": 203
+        "inspected files count": 203,
+        "mem traffic": 2095
     },
     "Google-Brotli": {
         "sources": {
@@ -173,7 +173,8 @@
             "commit": "5805f99a533a8f8118699c0100d8c102f3605f65"
         },
         "build dir": "out",
-        "inspected files count": 49
+        "inspected files count": 49,
+        "mem traffic": 980
     },
     "Google-RE2": {
         "sources": {
@@ -181,21 +182,24 @@
             "commit": "e860767c86e577b87deadf24cc4567ea83c4f162"
         },
         "build dir": "out",
-        "inspected files count": 72
+        "inspected files count": 72,
+        "mem traffic": 1351
     },
     "Snappy": {
         "sources": {
             "repo": "https://github.com/google/snappy.git",
             "commit": "ea660b57d65d68d521287c903459b6dd3b2804d0"
         },
-        "inspected files count": 13
+        "inspected files count": 13,
+        "mem traffic": 435
     },
     "dlib": {
         "sources": {
             "repo": "https://github.com/davisking/dlib.git",
             "commit": "99af7b9d54f47fc0609490fde09b6c20fde6ae62"
         },
-        "inspected files count": 134
+        "inspected files count": 134,
+        "mem traffic": 3216
     },
     "imgui": {
         "sources": {
@@ -205,7 +209,8 @@
         "custom build tool": {
             "path to .sln": "examples/imgui_examples.sln"
         },
-        "inspected files count": 63
+        "inspected files count": 63,
+        "mem traffic": 3875
     },
     "shaderc": "Shaderc.json",
     "benchmark": "Benchmark.json",
@@ -224,7 +229,8 @@
         "to skip": [
             "mesh_005F_002A_005Fhelpers_002Eh"
         ],
-        "inspected files count": 303
+        "inspected files count": 303,
+        "mem traffic": 2470
     },
     "GLM": {
         "sources": {
@@ -232,7 +238,8 @@
             "commit": "fce2abd01ce21063bd25ba67c9318be83bf48813"
         },
         "project to check": "test-*",
-        "inspected files count": 153
+        "inspected files count": 153,
+        "mem traffic": 2471
     },
     "ONNXRuntime": "ONNXRuntime.json",
     "SEAL": {
@@ -244,14 +251,16 @@
         "cmake options": [
             "-DALLOW_COMMAND_LINE_BUILD=1"
         ],
-        "inspected files count": 32
+        "inspected files count": 32,
+        "mem traffic": 768
     },
     "UnitTestCpp": {
         "sources": {
             "repo": "https://github.com/unittest-cpp/unittest-cpp.git",
             "commit": "bc5d87f484cac2959b0a0eafbde228e69e828d74"
         },
-        "inspected files count": 78
+        "inspected files count": 78,
+        "mem traffic": 1072
     },
     "mwt-ds-explore": {
         "sources": {
@@ -261,7 +270,8 @@
         "custom build tool": {
             "path to .sln": "explore.sln"
         },
-        "inspected files count": 7
+        "inspected files count": 7,
+        "mem traffic": 509
     },
     "Plist": {
         "sources": {
@@ -272,7 +282,8 @@
             "PlistCpp",
             "NSPlist"
         ],
-        "inspected files count": 5
+        "inspected files count": 5,
+        "mem traffic": 359
     },
     "Sprout": "Sprout.json",
     "eEVM": {
@@ -283,7 +294,8 @@
         "required dependencies": [
             "boost-multiprecision"
         ],
-        "inspected files count": 18
+        "inspected files count": 18,
+        "mem traffic": 1170
     },
     "xgboost": {
         "sources": {
@@ -294,50 +306,17 @@
             "input_005Fsplit_005Fshuffle_002Eh",
             "lua_002Eh"
         ],
-        "inspected files count": 88
+        "inspected files count": 88,
+        "mem traffic": 2061
     },
     "json-rpc-cxx": {
         "sources": {
             "repo": "https://github.com/jsonrpcx/json-rpc-cxx.git",
             "commit": "6cb2db06e048ed000ccb66422ec52f3725be41e6"
         },
-        "inspected files count": 13
+        "inspected files count": 13,
+        "mem traffic": 870
     },
-    "RigelEngine": {
-        "sources": {
-            "repo": "https://github.com/lethal-guitar/RigelEngine.git",
-            "commit": "67f1ff7faecb565a93b72d1f803c4424c9428e63"
-        },
-        "required dependencies": [
-            "boost-program-options",
-            "sdl2",
-            "sdl2-mixer"
-        ],
-        "to skip": [
-            "resample_005Fneon_002Eh"
-        ],
-        "known errors": [
-            {
-                "file": "..\\3rd_party\\speex_resampler\\speex\\resample_sse.h",
-                "line": "57",
-                "message": "Cannot resolve symbol 'spx_uint32_t'",
-                "reason": "wrong order of #include's"
-            }
-        ],
-        "inspected files count": 277
-    },
-    "PhysX-3.4": {
-        "sources": {
-            "repo": "https://github.com/NVIDIAGameWorks/PhysX-3.4.git",
-            "commit": "326e24039dd3f063afd211fad770e15bdd5ff4ea"
-        },
-        "custom build tool": {
-            "path to .sln": "PhysX_3.4/Source/compiler/vc15win64/PhysX.sln"
-        },
-        "project to check": "PhysX",
-        "to skip": [
-            "PxMetaDataCompare_002Eh"
-        ],
-        "inspected files count": 179
-    }
+    "RigelEngine": "RigelEngine.json",
+    "PhysX-3.4": "PhysX.json"
 }

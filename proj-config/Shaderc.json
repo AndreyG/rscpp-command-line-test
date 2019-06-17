@@ -19,5 +19,6 @@
             "reason": "RSCPP-20730"
         }
     ],
-    "inspected files count": 1034
+    "inspected files count": 1034,
+    "mem traffic": 26300
 }

@@ -6,5 +6,6 @@
     "cmake options": [
         "-DBENCHMARK_ENABLE_GTEST_TESTS=OFF"
     ],
-    "inspected files count": 74
+    "inspected files count": 74,
+    "mem traffic": 1285
 }
