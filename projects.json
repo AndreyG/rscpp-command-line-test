@@ -83,6 +83,26 @@
         },
         "known errors": [
             {
+                "file": "..\\Rx\\v2\\test\\subscriptions\\coroutine.cpp",
+                "line": "28",
+                "message": "Cannot resolve the awaiter type"
+            },
+            {
+                "file": "..\\Rx\\v2\\test\\subscriptions\\coroutine.cpp",
+                "line": "89",
+                "message": "Cannot resolve the awaiter type"
+            },
+            {
+                "file": "..\\Rx\\v2\\test\\subscriptions\\coroutine.cpp",
+                "line": "35",
+                "message": "Cannot resolve the call to member 'unhandled_exception' of 'std::experimental::coroutine_traits<std::future<void>>::promise_type': no viable function found"
+            },
+            {
+                "file": "..\\Rx\\v2\\test\\subscriptions\\coroutine.cpp",
+                "line": "96",
+                "message": "Cannot resolve the call to member 'unhandled_exception' of 'std::experimental::coroutine_traits<std::future<void>>::promise_type': no viable function found"
+            },
+            {
                 "file": "..\\Rx\\v2\\src\\rxcpp\\rx-scheduler.hpp",
                 "line": "32",
                 "message": "Type 'rxcpp::schedulers::detail::action_type' is incomplete"
