@@ -5,7 +5,7 @@
             "commit": "1c1c2d643a6b0acaad428e82594ddde9af51c19c"
         },
         "inspected files count": 112,
-        "mem traffic": 3040
+        "mem traffic": 3000
     },
     "cds": {
         "sources": {
@@ -13,7 +13,7 @@
             "commit": "e808976c63e4a58b035bafa473201cf77c9a2c46"
         },
         "inspected files count": 20,
-        "mem traffic": 590
+        "mem traffic": 600
     },
     "args": {
         "sources": {
@@ -21,7 +21,7 @@
             "commit": "a82a9d6c94d7c58d8b96c65bdc1aba09a4f3e5db"
         },
         "inspected files count": 6,
-        "mem traffic": 580
+        "mem traffic": 570
     },
     "replxx": {
         "sources": {

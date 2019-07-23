@@ -54,11 +54,11 @@ def process_project(project_name, project):
 
     expected_traffic = project.get("mem traffic")
     if expected_traffic:
-        relative_delta = (actual_traffic - expected_traffic) / expected_traffic
-        if abs(relative_delta) < 0.005:
+        relative_delta = (actual_traffic - expected_traffic) / expected_traffic * 100
+        if abs(relative_delta) < (3.0 if expected_traffic < 1000 else 0.5):
             shutil.rmtree(snapshot_dir)
         print("expected traffic is {0} MB, actual traffic is {1} MB; delta = {2:.2f}%"
-              .format(expected_traffic, actual_traffic, relative_delta * 100))
+              .format(expected_traffic, actual_traffic, relative_delta))
     else:
         print("traffic is {0} MB".format(actual_traffic))
 
