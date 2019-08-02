@@ -347,5 +347,6 @@
     },
     "RigelEngine": "RigelEngine.json",
     "CGAL" : "CGAL.json",
+    "Diablo" : "Diablo.json",
     "PhysX-3.4": "PhysX.json"
 }

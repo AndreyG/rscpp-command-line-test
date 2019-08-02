@@ -1,0 +1,10 @@
+{
+    "sources": {
+        "repo": "https://github.com/diasurgical/devilution.git",
+        "commit": "905ad6efcdab63cef94b74e83478e01b2d9425a7"
+    },
+    "custom build tool": {
+        "path to .sln": "Diablo.sln"
+    },
+    "inspected files count": 0
+}
