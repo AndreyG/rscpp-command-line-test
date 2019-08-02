@@ -62,10 +62,13 @@ def process_project(project_name, project):
     project_to_check = project.get("project to check")
     msbuild_props = project.get("msbuild properties")
     report_file, output = run_inspect_code(project_dir, sln_file, project_to_check, msbuild_props)
-    expected_files_count = project["inspected files count"]
+    expected_files_count = project.get("inspected files count")
     actual_files_count = common.inspected_files_count(output)
-    if expected_files_count != actual_files_count:
-        print("expected count of inspected files is {0}, but actual is {1}".format(expected_files_count, actual_files_count))
+    if expected_files_count:
+        if expected_files_count != actual_files_count:
+            print("expected count of inspected files is {0}, but actual is {1}".format(expected_files_count, actual_files_count))
+    else:
+        print("count of inspected files is ", actual_files_count)
     check_report(report_file, project.get("known errors"))
 
 
