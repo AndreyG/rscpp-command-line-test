@@ -1,0 +1,16 @@
+{
+    "sources": {
+        "repo": "https://github.com/cgal/cgal.git",
+        "commit": "0dd30b1a683e735cee56f5c379511ca81128fd4a"
+    },
+    "cmake options": [
+        "-DWITH_examples=ON",
+        "-DCGAL_HEADER_ONLY=OFF"
+    ],
+    "required dependencies": [
+        "eigen3",
+        "mpfr",
+        "boost-serialization"
+    ],
+    "inspected files count": 793
+}

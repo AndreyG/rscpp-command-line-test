@@ -346,5 +346,6 @@
         "mem traffic": 2563
     },
     "RigelEngine": "RigelEngine.json",
+    "CGAL" : "CGAL.json",
     "PhysX-3.4": "PhysX.json"
 }
