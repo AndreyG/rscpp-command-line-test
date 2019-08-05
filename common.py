@@ -33,14 +33,14 @@ def get_sources_from_git(project_input, target_dir):
         if not path.exists(path.join(subrepo_dir, ".git")):
             subprocess.run(["git", "clone", subrepo["url"], subrepo_dir], check=True)
         chdir(subrepo_dir)
-        subprocess.run(["git", "checkout", subrepo["commit"]], check=True, stdout=PIPE, stderr=PIPE)
+        subprocess.run(["git", "checkout", subrepo["commit"], "."], check=True, stdout=PIPE, stderr=PIPE)
         chdir(target_dir)
 
     custom_update_source_script = project_input.get("custom update source script")
     if custom_update_source_script:
         subprocess.run(custom_update_source_script, check=True, stdout=PIPE, stderr=PIPE)
 
-    subprocess.run(["git", "checkout", project_input["commit"]], check=True, stdout=PIPE, stderr=PIPE)
+    subprocess.run(["git", "checkout", project_input["commit"], "."], check=True, stdout=PIPE, stderr=PIPE)
     subprocess.run(["git", "submodule", "update", "--init"], check=True, stdout=PIPE, stderr=PIPE)
     root_dir = project_input.get("root")
     if root_dir:
