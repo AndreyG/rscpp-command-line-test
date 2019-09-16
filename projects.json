@@ -335,6 +335,17 @@
         "inspected files count": 54,
         "mem traffic": 2563
     },
+    "spdlog": {
+        "sources": {
+            "repo": "https://github.com/gabime/spdlog.git",
+            "commit": "a9ed6b352b1ecfe0650a34bba265e56b0391ba78"
+        },
+        "to skip": [
+            "syslog_005Fsink_002Eh",
+            "systemd_005Fsink_002Eh"
+        ],
+        "inspected files count": 101
+    },
     "RigelEngine": "RigelEngine.json",
     "CGAL" : "CGAL.json",
     "Diablo" : "Diablo.json",
