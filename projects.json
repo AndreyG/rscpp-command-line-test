@@ -346,6 +346,16 @@
         ],
         "inspected files count": 101
     },
+    "HinnantDate": {
+        "sources": {
+            "repo": "https://github.com/HowardHinnant/date.git",
+            "commit": "44344000f0fa32e66787d6d2c9ff5ddfd3605df7"
+        },
+        "required dependencies": [
+            "curl"
+        ],
+       "inspected files count": 75
+    },
     "RigelEngine": "RigelEngine.json",
     "CGAL" : "CGAL.json",
     "Diablo" : "Diablo.json",
