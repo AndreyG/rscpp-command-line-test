@@ -5,7 +5,7 @@
             "commit": "1c1c2d643a6b0acaad428e82594ddde9af51c19c"
         },
         "inspected files count": 112,
-        "mem traffic": 3000
+        "mem traffic": 2910
     },
     "cds": {
         "sources": {
@@ -13,7 +13,7 @@
             "commit": "e808976c63e4a58b035bafa473201cf77c9a2c46"
         },
         "inspected files count": 20,
-        "mem traffic": 600
+        "mem traffic": 570
     },
     "args": {
         "sources": {
@@ -21,7 +21,7 @@
             "commit": "a82a9d6c94d7c58d8b96c65bdc1aba09a4f3e5db"
         },
         "inspected files count": 6,
-        "mem traffic": 570
+        "mem traffic": 540
     },
     "replxx": {
         "sources": {
@@ -29,7 +29,7 @@
             "commit": "f719de5ee3c89d9dd955f43a8b95eecebdf9ccd6"
         },
         "inspected files count": 13,
-        "mem traffic": 520
+        "mem traffic": 490
     },
     "LLVM": "LLVM.json",
     "fmtlib": "FMT.json",
@@ -40,7 +40,7 @@
         },
         "project to check": "vtkCommonCoreCxxTests",
         "inspected files count": 56,
-        "mem traffic": 5500
+        "mem traffic": 5750
     },
     "ITK": {
         "sources": {
@@ -49,7 +49,7 @@
         },
         "project to check": "ITKCommon",
         "inspected files count": 90,
-        "mem traffic": 9556
+        "mem traffic": 10000
     },
     "rocksdb": {
         "sources": {
@@ -65,7 +65,7 @@
             "commit": "85504b45f6229c2695bc109d771045fcb10fc1e0"
         },
         "inspected files count": 1770,
-        "mem traffic": 25800
+        "mem traffic": 25400
     },
     "OpenCV": {
         "sources": {
@@ -74,7 +74,7 @@
         },
         "project to check": "opencv_test_*",
         "inspected files count": 309,
-        "mem traffic": 12630
+        "mem traffic": 12880
     },
     "RxCpp": {
         "sources": {
@@ -99,7 +99,7 @@
             }
         ],
         "inspected files count": 246,
-        "mem traffic": 8566
+        "mem traffic": 8330
     },
     "SQLiteCpp": {
         "sources": {
@@ -107,7 +107,7 @@
             "commit": "b454170da118d64eed77ee082f0d9aae8c97543d"
         },
         "inspected files count": 18,
-        "mem traffic": 1770
+        "mem traffic": 1700
     },
     "argh": {
         "sources": {
@@ -175,7 +175,7 @@
             "catch_005Fobjc_002A"
         ],
         "inspected files count": 203,
-        "mem traffic": 2095
+        "mem traffic": 2040
     },
     "Google-Brotli": {
         "sources": {
@@ -184,7 +184,7 @@
         },
         "build dir": "out",
         "inspected files count": 49,
-        "mem traffic": 980
+        "mem traffic": 960
     },
     "Google-RE2": {
         "sources": {
@@ -193,7 +193,7 @@
         },
         "build dir": "out",
         "inspected files count": 72,
-        "mem traffic": 1351
+        "mem traffic": 1300
     },
     "Snappy": {
         "sources": {
