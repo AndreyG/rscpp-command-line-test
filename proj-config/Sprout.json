@@ -11,17 +11,17 @@
         {
             "file": "..\\libs\\weed\\example\\as_tuple.cpp",
             "line": "50",
-            "message": "Substitution failed: type 'typename sprout::weed::parse_context<Iterator>::eval<typename sprout::weed::traits::terminal_or_expr_of<Parser>::type>::result_type::presult_type' is ill-formed with Iterator = sprout::container_traits<sprout::basic_string<char, 9> const>::iterator, Parser = sprout::weed::traits::expr_of<sprout::weed::tag::shift_left, sprout::weed::expr<sprout::weed::tag::shift_left, sprout::weed::expr<sprout::weed::tag::terminal, sprout::weed::as_tuple_p<sprout::weed::expr<sprout::weed::tag::dereference, sprout::weed::expr<sprout::weed::tag::terminal, sprout::weed::limit_p<sprout::weed::expr<sprout::weed::tag::minus, sprout::weed::expr<sprout::weed::tag::terminal, sprout::weed::any_char_p>, sprout::weed::expr<sprout::weed::tag::terminal, char>>, 4>>>>>, sprout::weed::expr<sprout::weed::tag::terminal, char>>, sprout::weed::as_tuple_p<sprout::weed::expr<sprout::weed::tag::dereference, sprout::weed::expr<sprout::weed::tag::terminal, sprout::weed::limit_p<sprout::weed::expr<sprout::weed::tag::minus, sprout::weed::expr<sprout::weed::tag::terminal, sprout::weed::any_char_p>, sprout::weed::expr<sprout::weed::tag::terminal, char>>, 4>>>>>::type"
+            "message": "Substitution failed"
         },
         {
             "file": "..\\libs\\string\\example\\c_str_to_sprout_string.cpp",
             "line": "38",
-            "message": "Substitution failed with N = <empty>"
+            "message": "Substitution failed"
         },
         {
             "file": "..\\libs\\string\\example\\c_str_to_sprout_string.cpp",
             "line": "34",
-            "message": "No viable function.\r\nArgument types: 'char const* const'.\r\nCandidates considered: \r\n  sprout::basic_string<T, N> string_from_c_str<N, T>(T const* s)\r\n    substitution failed with N = <empty>\r\n  sprout::basic_string<T, N, Traits> string_from_c_str<N, T, Traits>(std::basic_string<T, Traits> const& s)\r\n    substitution failed with N = <empty>\r\n  sprout::basic_string<T, N> string_from_c_str<N, T>(T const* s, std::size_t n)\r\n    has 2 parameters, but is called with 1 argument"
+            "message": "No matching function for call to 'string_from_c_str'"
         }
     ],
     "inspected files count": 151,
