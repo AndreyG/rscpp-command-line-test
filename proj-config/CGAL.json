@@ -10,6 +10,7 @@
     "required dependencies": [
         "eigen3",
         "mpfr",
+        "boost-graph",
         "boost-serialization"
     ],
     "inspected files count": 793
