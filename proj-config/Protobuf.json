@@ -8,6 +8,9 @@
         "-Dprotobuf_BUILD_TESTS=OFF",
         "-Wno-dev"
     ],
+    "required dependencies": [
+        "zlib"
+     ],
     "inspected files count": 330,
     "mem traffic": 6946
 }

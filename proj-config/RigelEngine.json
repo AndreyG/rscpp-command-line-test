@@ -5,6 +5,7 @@
     },
     "required dependencies": [
         "boost-program-options",
+        "boost-algorithm",
         "sdl2",
         "sdl2-mixer"
     ],
