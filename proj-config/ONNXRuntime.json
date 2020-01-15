@@ -15,6 +15,9 @@
         ],
         "path to .sln": "Build/Windows/Debug/onnxruntime.sln"
     },
+    "required dependencies": [
+        "zlib"
+    ],
     "known errors": [
         {
             "file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc",
