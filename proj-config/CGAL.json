@@ -14,5 +14,6 @@
         "boost-serialization",
         "boost-timer"
     ],
-    "inspected files count": 793
+    "inspected files count": 793,
+    "mem traffic": 75720
 }

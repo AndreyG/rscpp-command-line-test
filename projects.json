@@ -5,7 +5,7 @@
             "commit": "1c1c2d643a6b0acaad428e82594ddde9af51c19c"
         },
         "inspected files count": 112,
-        "mem traffic": 2910
+        "mem traffic": 2647
     },
     "cds": {
         "sources": {
@@ -13,7 +13,7 @@
             "commit": "e808976c63e4a58b035bafa473201cf77c9a2c46"
         },
         "inspected files count": 20,
-        "mem traffic": 570
+        "mem traffic": 553
     },
     "args": {
         "sources": {
@@ -21,7 +21,7 @@
             "commit": "a82a9d6c94d7c58d8b96c65bdc1aba09a4f3e5db"
         },
         "inspected files count": 6,
-        "mem traffic": 540
+        "mem traffic": 510
     },
     "replxx": {
         "sources": {
@@ -29,7 +29,7 @@
             "commit": "f719de5ee3c89d9dd955f43a8b95eecebdf9ccd6"
         },
         "inspected files count": 13,
-        "mem traffic": 490
+        "mem traffic": 472
     },
     "LLVM": "LLVM.json",
     "fmtlib": "FMT.json",
@@ -40,7 +40,7 @@
         },
         "project to check": "vtkCommonCoreCxxTests",
         "inspected files count": 56,
-        "mem traffic": 5750
+        "mem traffic": 5570
     },
     "ITK": {
         "sources": {
@@ -49,7 +49,7 @@
         },
         "project to check": "ITKCommon",
         "inspected files count": 90,
-        "mem traffic": 10000
+        "mem traffic": 9850
     },
     "rocksdb": {
         "sources": {
@@ -57,7 +57,7 @@
             "commit": "de651035535b6d66276edc97c121cb507e9138cb"
         },
         "inspected files count": 625,
-        "mem traffic": 24000
+        "mem traffic": 22030
     },
     "OpenSceneGraph": {
         "sources": {
@@ -65,7 +65,7 @@
             "commit": "85504b45f6229c2695bc109d771045fcb10fc1e0"
         },
         "inspected files count": 1770,
-        "mem traffic": 25400
+        "mem traffic": 24224
     },
     "OpenCV": {
         "sources": {
@@ -74,7 +74,7 @@
         },
         "project to check": "opencv_test_*",
         "inspected files count": 309,
-        "mem traffic": 12880
+        "mem traffic": 11933
     },
     "RxCpp": {
         "sources": {
@@ -99,7 +99,7 @@
             }
         ],
         "inspected files count": 246,
-        "mem traffic": 8330
+        "mem traffic": 7700
     },
     "SQLiteCpp": {
         "sources": {
@@ -107,7 +107,7 @@
             "commit": "b454170da118d64eed77ee082f0d9aae8c97543d"
         },
         "inspected files count": 18,
-        "mem traffic": 1700
+        "mem traffic": 1510
     },
     "argh": {
         "sources": {
@@ -115,7 +115,7 @@
             "commit": "0775441d436749263279626a1c820267940188f7"
         },
         "inspected files count": 2,
-        "mem traffic": 420
+        "mem traffic": 370
     },
     "Eigen3": {
         "sources": {
@@ -128,7 +128,7 @@
             "-DEIGEN_TEST_CXX11=ON"
         ],
         "inspected files count": 82,
-        "mem traffic": 4938
+        "mem traffic": 4600
     },
     "X265": {
         "sources": {
@@ -141,7 +141,7 @@
             "encoder"
         ],
         "inspected files count": 93,
-        "mem traffic" : 2261
+        "mem traffic" : 2029
     },
     "DependencyChecker": {
         "sources": {
@@ -149,7 +149,7 @@
             "commit": "e41dc70c62b2d6e3fea014b3a0e62dc64fed6d5f"
         },
         "inspected files count": 20,
-        "mem traffic" : 640
+        "mem traffic" : 570
     },
     "ZSTD": {
         "sources": {
@@ -161,7 +161,7 @@
             "-DZSTD_BUILD_TESTS=ON"
         ],
         "inspected files count": 123,
-        "mem traffic" : 2000
+        "mem traffic" : 1766
     },
     "Protobuf": "Protobuf.json",
     "Chakra.Core": "Chakra.json",
@@ -175,7 +175,7 @@
             "catch_005Fobjc_002A"
         ],
         "inspected files count": 203,
-        "mem traffic": 2040
+        "mem traffic": 1920
     },
     "Google-Brotli": {
         "sources": {
@@ -184,7 +184,7 @@
         },
         "build dir": "out",
         "inspected files count": 49,
-        "mem traffic": 960
+        "mem traffic": 840
     },
     "Google-RE2": {
         "sources": {
@@ -193,7 +193,7 @@
         },
         "build dir": "out",
         "inspected files count": 72,
-        "mem traffic": 1300
+        "mem traffic": 1197
     },
     "Snappy": {
         "sources": {
@@ -201,7 +201,7 @@
             "commit": "ea660b57d65d68d521287c903459b6dd3b2804d0"
         },
         "inspected files count": 13,
-        "mem traffic": 435
+        "mem traffic": 386
     },
     "dlib": {
         "sources": {
@@ -209,7 +209,7 @@
             "commit": "99af7b9d54f47fc0609490fde09b6c20fde6ae62"
         },
         "inspected files count": 134,
-        "mem traffic": 3216
+        "mem traffic": 2930
     },
     "imgui": {
         "sources": {
@@ -220,7 +220,7 @@
             "path to .sln": "examples/imgui_examples.sln"
         },
         "inspected files count": 63,
-        "mem traffic": 3875
+        "mem traffic": 3300
     },
     "shaderc": "Shaderc.json",
     "benchmark": "Benchmark.json",
@@ -240,7 +240,7 @@
             "mesh_005F_002A_005Fhelpers_002Eh"
         ],
         "inspected files count": 303,
-        "mem traffic": 2470
+        "mem traffic": 2320
     },
     "GLM": {
         "sources": {
@@ -249,7 +249,7 @@
         },
         "project to check": "test-*",
         "inspected files count": 153,
-        "mem traffic": 2471
+        "mem traffic": 2270
     },
     "ONNXRuntime": "ONNXRuntime.json",
     "SEAL": {
@@ -262,7 +262,7 @@
             "-DALLOW_COMMAND_LINE_BUILD=1"
         ],
         "inspected files count": 32,
-        "mem traffic": 768
+        "mem traffic": 690
     },
     "UnitTestCpp": {
         "sources": {
@@ -270,7 +270,7 @@
             "commit": "bc5d87f484cac2959b0a0eafbde228e69e828d74"
         },
         "inspected files count": 78,
-        "mem traffic": 1072
+        "mem traffic": 930
     },
     "mwt-ds-explore": {
         "sources": {
@@ -281,7 +281,7 @@
             "path to .sln": "explore.sln"
         },
         "inspected files count": 7,
-        "mem traffic": 509
+        "mem traffic": 450
     },
     "Plist": {
         "sources": {
@@ -293,7 +293,7 @@
             "NSPlist"
         ],
         "inspected files count": 5,
-        "mem traffic": 359
+        "mem traffic": 300
     },
     "Sprout": "Sprout.json",
     "eEVM": {
@@ -305,7 +305,7 @@
             "boost-multiprecision"
         ],
         "inspected files count": 18,
-        "mem traffic": 1170
+        "mem traffic": 1100
     },
     "xgboost": {
         "sources": {
@@ -317,7 +317,7 @@
             "lua_002Eh"
         ],
         "inspected files count": 88,
-        "mem traffic": 2061
+        "mem traffic": 1880
     },
     "json-rpc-cxx": {
         "sources": {
@@ -333,7 +333,7 @@
             "commit": "4b3d7c2f42142f10b888e580c515f60ca98e2ee9"
         },
         "inspected files count": 54,
-        "mem traffic": 2563
+        "mem traffic": 2180
     },
     "spdlog": {
         "sources": {
@@ -344,7 +344,8 @@
             "syslog_005Fsink_002Eh",
             "systemd_005Fsink_002Eh"
         ],
-        "inspected files count": 101
+        "inspected files count": 101,
+        "mem traffic": 1710
     },
     "HinnantDate": {
         "sources": {
@@ -354,7 +355,8 @@
         "required dependencies": [
             "curl"
         ],
-       "inspected files count": 75
+        "inspected files count": 75,
+        "mem traffic": 2070
     },
     "RigelEngine": "RigelEngine.json",
     "CGAL" : "CGAL.json",
