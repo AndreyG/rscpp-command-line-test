@@ -11,7 +11,8 @@
         "eigen3",
         "mpfr",
         "boost-graph",
-        "boost-serialization"
+        "boost-serialization",
+        "boost-timer"
     ],
     "inspected files count": 793
 }
