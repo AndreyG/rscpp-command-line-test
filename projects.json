@@ -361,5 +361,6 @@
     "RigelEngine": "RigelEngine.json",
     "CGAL" : "CGAL.json",
     "Diablo" : "Diablo.json",
+    "RecastNavigation": "RecastNavigation.json",
     "PhysX-3.4": "PhysX.json"
 }

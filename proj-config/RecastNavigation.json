@@ -1,0 +1,10 @@
+{
+    "sources": {
+        "repo": "https://github.com/recastnavigation/recastnavigation.git",
+        "commit": "57610fa6ef31b39020231906f8c5d40eaa8294ae"
+    },
+    "required dependencies": [
+        "sdl2"
+    ],
+    "inspected files count": 55
+}
