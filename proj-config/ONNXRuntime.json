@@ -20,57 +20,6 @@
     ],
     "known errors": [
         {
-            "file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc",
-            "line": "107",
-            "message": "Cannot resolve symbol 'LL'",
-            "reason": "RSCPP-26399"
-        },
-        {
-            "file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc",
-            "line": "107",
-            "message": "Expected ',' or ')'"
-        },
-        {
-            "file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc",
-            "line": "110",
-            "message": "Cannot resolve symbol 'LL'"
-        },
-        {
-            "file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc",
-            "line": "110",
-            "message": "Expected ',' or ')'"
-        },
-        {
-            "file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc",
-            "line": "113",
-            "message": "Cannot resolve symbol 'LL'"
-        },
-        {
-            "file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc",
-            "line": "113",
-            "message": "Expected ',' or ')'"
-        },
-        {
-            "file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc",
-            "line": "116",
-            "message": "Cannot resolve symbol 'LL'"
-        },
-        {
-            "file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc",
-            "line": "116",
-            "message": "Expected ',' or ')'"
-        },
-        {
-            "file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc",
-            "line": "119",
-            "message": "Cannot resolve symbol 'LL'"
-        },
-        {
-            "file": "..\\..\\..\\onnxruntime\\core\\platform\\windows\\logging\\etw_sink.cc",
-            "line": "119",
-            "message": "Expected ',' or ')'"
-        },
-        {
             "file": "..\\..\\..\\onnxruntime\\core\\graph\\function_inliner.h",
             "line": "7",
             "message": "Cannot find file 'rewrite_rule.h' in search paths:\r\nC:\\work\\rscpp-command-line-test\\projects\\ONNXRuntime\\include\\onnxruntime\\core\\graph\r\nC:\\work\\rscpp-command-line-test\\projects\\ONNXRuntime\\onnxruntime\\core\\graph\r\n"
