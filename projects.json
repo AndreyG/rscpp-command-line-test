@@ -358,6 +358,14 @@
         "inspected files count": 75,
         "mem traffic": 2070
     },
+    "CLI11": {
+        "sources": {
+            "repo": "https://github.com/CLIUtils/CLI11.git",
+            "commit": "ba68040e9260f2841213849f2f4a11b4246d56f8"
+        },
+        "inspected files count": 649,
+        "mem traffic": 14900
+    },
     "RigelEngine": "RigelEngine.json",
     "CGAL" : "CGAL.json",
     "Diablo" : "Diablo.json",
