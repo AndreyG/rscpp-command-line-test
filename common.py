@@ -22,25 +22,32 @@ projects_dir = path.join(cli_test_dir, "projects")
 caches_home = path.join(cli_test_dir, "caches-home")
 
 
-def get_sources_from_git(project_input, target_dir):
+def git_clone_if_needed(target_dir, url):
     if not path.exists(path.join(target_dir, ".git")):
-        subprocess.run(["git", "clone", project_input["repo"], target_dir], check=True)
+        subprocess.run(["git", "clone", url, target_dir], check=True)
+
+
+def git_checkout_commit(commit):
+    subprocess.run(["git", "checkout", commit, "."], check=True, stdout=PIPE, stderr=PIPE)
+
+
+def get_sources_from_git(project_input, target_dir):
+    git_clone_if_needed(target_dir, project_input["repo"])
 
     chdir(target_dir)
     subrepo = project_input.get("subrepo")
     if subrepo:
         subrepo_dir = subrepo["path"]
-        if not path.exists(path.join(subrepo_dir, ".git")):
-            subprocess.run(["git", "clone", subrepo["url"], subrepo_dir], check=True)
+        git_clone_if_needed(subrepo_dir, subrepo["url"])
         chdir(subrepo_dir)
-        subprocess.run(["git", "checkout", subrepo["commit"], "."], check=True, stdout=PIPE, stderr=PIPE)
+        git_checkout_commit(subrepo["commit"])
         chdir(target_dir)
 
     custom_update_source_script = project_input.get("custom update source script")
     if custom_update_source_script:
         subprocess.run(custom_update_source_script, check=True, stdout=PIPE, stderr=PIPE)
 
-    subprocess.run(["git", "checkout", project_input["commit"], "."], check=True, stdout=PIPE, stderr=PIPE)
+    git_checkout_commit(project_input["commit"])
     subprocess.run(["git", "submodule", "update", "--init"], check=True, stdout=PIPE, stderr=PIPE)
     root_dir = project_input.get("root")
     if root_dir:
