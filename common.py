@@ -27,8 +27,9 @@ def git_clone_if_needed(target_dir, url):
         subprocess.run(["git", "clone", url, target_dir], check=True)
 
 
-def git_checkout_commit(commit):
-    subprocess.run(["git", "checkout", commit, "."], check=True, stdout=PIPE, stderr=PIPE)
+def git_checkout_commit_and_overwrite_local_changes(commit):
+    subprocess.run(["git", "checkout", commit], check=True, stdout=PIPE, stderr=PIPE)
+    subprocess.run(["git", "reset", "--hard"],  check=True, stdout=PIPE, stderr=PIPE)
 
 
 def get_sources_from_git(project_input, target_dir):
@@ -40,14 +41,14 @@ def get_sources_from_git(project_input, target_dir):
         subrepo_dir = subrepo["path"]
         git_clone_if_needed(subrepo_dir, subrepo["url"])
         chdir(subrepo_dir)
-        git_checkout_commit(subrepo["commit"])
+        git_checkout_commit_and_overwrite_local_changes(subrepo["commit"])
         chdir(target_dir)
 
     custom_update_source_script = project_input.get("custom update source script")
     if custom_update_source_script:
         subprocess.run(custom_update_source_script, check=True, stdout=PIPE, stderr=PIPE)
 
-    git_checkout_commit(project_input["commit"])
+    git_checkout_commit_and_overwrite_local_changes(project_input["commit"])
     subprocess.run(["git", "submodule", "update", "--init"], check=True, stdout=PIPE, stderr=PIPE)
     root_dir = project_input.get("root")
     if root_dir:
