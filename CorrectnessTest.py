@@ -78,8 +78,8 @@ else:
     start_time = time.time()
 
     for project_name, project in common.projects.items():
-        print("processing project {0}...".format(project_name))
+        print("processing project {0}...".format(project_name), flush=True)
         process_project(project_name, project)
-        print('-------------------------------------------------------')
+        print('-------------------------------------------------------', flush=True)
 
     print("Total time: " + common.duration(start_time, time.time()))
