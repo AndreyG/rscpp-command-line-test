@@ -8,8 +8,12 @@ import time
 
 import common
 
-console_profiler = path.join(common.resharper_build, "ConsoleProfiler.exe")
-snapshot_dumper  = path.join(common.resharper_build, "JetBrains.Timeline.Tools.Snapshot.Dumper.exe")
+profiler_dir = common.env.get("profiler directory")
+if not profiler_dir:
+    profiler_dir = common.resharper_build
+
+console_profiler = path.join(profiler_dir, "ConsoleProfiler.exe")
+snapshot_dumper  = path.join(profiler_dir, "JetBrains.Timeline.Tools.Snapshot.Dumper.exe")
 
 snapshots_home = path.join(common.cli_test_dir, "snapshots-home")
 makedirs(snapshots_home, exist_ok=True)
