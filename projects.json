@@ -95,7 +95,7 @@
             {
                 "file": "..\\Rx\\v2\\src\\rxcpp\\rx-scheduler.hpp",
                 "line": "32",
-                "message": "Type 'rxcpp::schedulers::detail::action_type' is incomplete"
+                "message": "Type 'action_type' is incomplete"
             }
         ],
         "inspected files count": 246,
