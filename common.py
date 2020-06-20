@@ -19,7 +19,9 @@ inspect_code_path = path.join(resharper_build, "inspectcode.x86.exe")
 
 cli_test_dir = env["test directory"]
 projects_dir = path.join(cli_test_dir, "projects")
-caches_home = path.join(cli_test_dir, "caches-home")
+caches_home = env.get("caches home")
+if not caches_home:
+    caches_home = path.join(cli_test_dir, "caches-home")
 
 
 def git_clone_if_needed(target_dir, url):
