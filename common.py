@@ -15,7 +15,8 @@ with open("projects.json") as f:
     projects = json.load(f)
 
 resharper_build = env["build directory"]
-inspect_code_path = path.join(resharper_build, "inspectcode.x86.exe")
+inspect_code_exe = "inspectcode.x86.exe"
+inspect_code_path = path.join(resharper_build, inspect_code_exe)
 
 cli_test_dir = env["test directory"]
 projects_dir = path.join(cli_test_dir, "projects")
