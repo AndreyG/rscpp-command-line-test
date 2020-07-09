@@ -62,12 +62,12 @@ def process_project(project_name, project):
         if abs(relative_delta) < (3.0 if expected_traffic < 1000 else 0.5):
             shutil.rmtree(snapshot_dir)
         print("expected traffic is {0} MB, actual traffic is {1} MB; delta = {2:.2f}%"
-              .format(expected_traffic, actual_traffic, relative_delta))
+              .format(expected_traffic, actual_traffic, relative_delta), flush=True)
     else:
-        print("traffic is {0} MB".format(actual_traffic))
+        print("traffic is {0} MB".format(actual_traffic), flush=True)
 
     elapsed_time = common.duration(start_time, time.time())
-    print("elapsed time: {0}".format(elapsed_time))
+    print("elapsed time: {0}".format(elapsed_time), flush=True)
 
 
 if common.args.project:
@@ -76,8 +76,8 @@ else:
     start_time = time.time()
 
     for project_name, project in common.projects.items():
-        print("processing project {0}...".format(project_name))
+        print("processing project {0}...".format(project_name), flush=True)
         process_project(project_name, project)
-        print('-------------------------------------------------------')
+        print('-------------------------------------------------------', flush=True)
 
     print("Total time: " + common.duration(start_time, time.time()))
