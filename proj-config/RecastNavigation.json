@@ -6,5 +6,6 @@
     "required dependencies": [
         "sdl2"
     ],
-    "inspected files count": 55
+    "inspected files count": 55,
+    "mem traffic": 1152
 }
