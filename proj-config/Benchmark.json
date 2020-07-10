@@ -7,5 +7,5 @@
         "-DBENCHMARK_ENABLE_GTEST_TESTS=OFF"
     ],
     "inspected files count": 74,
-    "mem traffic": 1162
+    "mem traffic": 1124
 }
