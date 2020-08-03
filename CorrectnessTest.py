@@ -72,8 +72,9 @@ def process_project(project_name, project):
     check_report(report_file, project.get("known errors"))
 
 
-if common.args.project:
-    process_project(common.args.project, common.projects[common.args.project])
+args = common.argparser.parse_args()
+if args.project:
+    process_project(args.project, common.projects[args.project])
 else:
     start_time = time.time()
 

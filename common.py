@@ -203,4 +203,3 @@ def duration(start, end):
 
 argparser = ArgumentParser()
 argparser.add_argument("-p", "--project", dest="project")
-args = argparser.parse_args()

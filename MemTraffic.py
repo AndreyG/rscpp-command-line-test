@@ -70,8 +70,9 @@ def process_project(project_name, project):
     print("elapsed time: {0}".format(elapsed_time), flush=True)
 
 
-if common.args.project:
-    process_project(common.args.project, common.projects[common.args.project])
+args = common.argparser.parse_args()
+if args.project:
+    process_project(args.project, common.projects[args.project])
 else:
     start_time = time.time()
 
