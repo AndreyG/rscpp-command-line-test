@@ -8,7 +8,7 @@ import time
 import sys
 import platform
 import uuid
-import json
+import shutil
 
 def invoke(args):
     process = Popen(args, stdout=PIPE, text=True)
@@ -25,15 +25,19 @@ def invoke(args):
     return True
 
 
-def run_inspect_code(project_dir, sln_file, project_to_check, msbuild_props):
+def run_inspect_code(project_dir, sln_file, project_to_check, msbuild_props, indexing):
     args, report_file = common.inspect_code_run_arguments(project_dir, sln_file, project_to_check, msbuild_props)
     args.insert(0, common.inspect_code_path)
+    if indexing:
+        args.append('--exclude="**"')
     #print(subprocess.list2cmdline(args))
     assert(invoke(args))
     result = []
 
     for attempt in range(10):
         print("attempt {0}".format(attempt))
+        if indexing:
+            shutil.rmtree(common.caches_home)
         start = time.time()
         assert(invoke(args))
         end = time.time()
@@ -43,12 +47,12 @@ def run_inspect_code(project_dir, sln_file, project_to_check, msbuild_props):
     return result
 
 
-def measure_project(project_name, project):
+def measure_project(project_name, project, indexing):
     project_dir, sln_file = common.prepare_project(project_name, project)
 
     project_to_check = project.get("project to check")
     msbuild_props = project.get("msbuild properties")
-    return run_inspect_code(project_dir, sln_file, project_to_check, msbuild_props)
+    return run_inspect_code(project_dir, sln_file, project_to_check, msbuild_props, indexing)
 
 
 def get_process_version(cmd_args):
@@ -76,7 +80,9 @@ def get_environment():
 
 common.argparser.add_argument("--human-readable", dest="human_readable", action='store_true')
 common.argparser.add_argument("--out-dir", dest="out_dir")
+common.argparser.add_argument("--indexing", dest="indexing", action='store_true')
 common.argparser.set_defaults(human_readable=False)
+common.argparser.set_defaults(indexing=False)
 args = common.argparser.parse_args()
 
 
@@ -85,7 +91,7 @@ def is_suitable_for_perf_test(project):
 
 
 def process_project(project_name, project):
-    result = measure_project(project_name, project)
+    result = measure_project(project_name, project, args.indexing)
     if args.human_readable:
         print(result)
     else:
@@ -117,7 +123,7 @@ if project_name:
     process_project(project_name, project)
 else:
     items = list(common.projects.items())
-    items.reverse()
+    #items.reverse()
     start_time = time.time()
 
     for project_name, project in items:
