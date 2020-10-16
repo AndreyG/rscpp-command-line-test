@@ -1,19 +1,18 @@
 {
     "sources": {
-        "repo": "https://github.com/dotnet/coreclr.git",
-        "commit": "d07633f53b51a30d294c4afe2b0b7ba5b563c134"
+        "repo": "https://github.com/dotnet/runtime.git",
+        "commit": "722b8a660e7e0c59419196be102784244883ff08"
     },
     "custom build tool": {
         "script": [
-            "build.cmd",
+            "src\\coreclr\\build-runtime.cmd",
             "-configureonly"
         ],
-        "path to .sln": "bin/obj/Windows_NT.x64.Debug/CoreCLR.sln"
+        "path to .sln": "artifacts/obj/coreclr/Windows_NT.x64.Debug/CoreCLR.sln"
     },
     "project to check": [
         "clrgc",
         "cordbdi"
     ],
-    "inspected files count": 90,
-    "mem traffic": 5950
+    "inspected files count": 100
 }
