@@ -37,7 +37,7 @@
         {
             "file": "..\\..\\..\\onnxruntime\\core\\graph\\function_inliner.h",
             "line": "21",
-            "message": "Type 'onnxruntime::Graph' is incomplete"
+            "message": "Type 'Graph' is incomplete"
         },
         {
             "file": "..\\..\\..\\onnxruntime\\core\\graph\\function_inliner.h",
