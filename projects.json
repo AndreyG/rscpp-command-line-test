@@ -131,15 +131,15 @@
     },
     "X265": {
         "sources": {
-            "kind": "zip",
-            "url": "https://bitbucket.org/multicoreware/x265/get/2.9.zip",
-            "root": "multicoreware-x265-f9681d731f2e/source"
+            "repo": "https://github.com/videolan/x265.git",
+            "commit": "83e2d7fb0b181b2d86498b2e729499e7f184e1ef",
+            "root": "source"
         },
         "project to check": [
             "common",
             "encoder"
         ],
-        "inspected files count": 93,
+        "inspected files count": 96,
         "mem traffic" : 1950
     },
     "DependencyChecker": {
