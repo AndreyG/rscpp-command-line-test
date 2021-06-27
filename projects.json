@@ -119,16 +119,15 @@
     },
     "Eigen3": {
         "sources": {
-            "kind": "zip",
-            "url": "http://bitbucket.org/eigen/eigen/get/3.3.5.zip",
-            "root": "eigen-eigen-b3f3d4950030"
+            "repo": "https://gitlab.com/libeigen/eigen.git",
+            "commit": "3.3.5"
         },
         "project to check": "cxx11_*",
         "cmake options": [
+            "-Wno-dev",
             "-DEIGEN_TEST_CXX11=ON"
         ],
-        "inspected files count": 82,
-        "mem traffic": 4550
+        "inspected files count": 82
     },
     "X265": {
         "sources": {
