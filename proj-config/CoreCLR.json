@@ -1,14 +1,15 @@
 {
     "sources": {
         "repo": "https://github.com/dotnet/runtime.git",
-        "commit": "722b8a660e7e0c59419196be102784244883ff08"
+        "commit": "722b8a660e7e0c59419196be102784244883ff08",
+        "root": "src\\coreclr"
     },
     "custom build tool": {
         "script": [
-            "src\\coreclr\\build-runtime.cmd",
+            "build-runtime.cmd",
             "-configureonly"
         ],
-        "path to .sln": "artifacts/obj/coreclr/Windows_NT.x64.Debug/CoreCLR.sln"
+        "path to .sln": "../../artifacts/obj/coreclr/Windows_NT.x64.Debug/CoreCLR.sln"
     },
     "project to check": [
         "clrgc",
