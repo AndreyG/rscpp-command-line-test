@@ -47,11 +47,12 @@ def get_sources_from_git(project_input, target_dir):
         git_checkout_commit_and_overwrite_local_changes(subrepo["commit"])
         chdir(target_dir)
 
+    git_checkout_commit_and_overwrite_local_changes(project_input["commit"])
+
     custom_update_source_script = project_input.get("custom update source script")
     if custom_update_source_script:
         subprocess.run(custom_update_source_script, check=True, stdout=PIPE, stderr=PIPE)
 
-    git_checkout_commit_and_overwrite_local_changes(project_input["commit"])
     subprocess.run(["git", "submodule", "update", "--init"], check=True, stdout=PIPE, stderr=PIPE)
     root_dir = project_input.get("root")
     if root_dir:
