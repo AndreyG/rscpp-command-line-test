@@ -165,7 +165,8 @@ def generate_settings(files_to_skip):
 
     if files_to_skip:
         for f in files_to_skip:
-            add_entry(root, "/Default/Environment/ExcludedFiles/FileMasksToSkip/={0}/@EntryIndexedValue".format(f), True)
+            section = "CodeInspection" if f.endswith('proto') else "Environment"
+            add_entry(root, "/Default/{1}/ExcludedFiles/FileMasksToSkip/={0}/@EntryIndexedValue".format(f, section), True)
 
     return ET.ElementTree(root)
 
