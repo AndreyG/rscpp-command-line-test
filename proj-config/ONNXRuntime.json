@@ -15,51 +15,13 @@
         ],
         "path to .sln": "Build/Windows/Debug/onnxruntime.sln"
     },
+    "to skip": [
+        "function_005Finliner_002Eh",
+        "tml_002Eproto"
+    ],
     "required dependencies": [
         "zlib"
     ],
-    "known errors": [
-        {
-            "file": "..\\..\\..\\onnxruntime\\core\\graph\\function_inliner.h",
-            "line": "7",
-            "message": "Cannot find file 'rewrite_rule.h' in search paths:\r\nC:\\work\\rscpp-command-line-test\\projects\\ONNXRuntime\\include\\onnxruntime\\core\\graph\r\nC:\\work\\rscpp-command-line-test\\projects\\ONNXRuntime\\onnxruntime\\core\\graph\r\n"
-        },
-        {
-            "file": "..\\..\\..\\onnxruntime\\core\\graph\\function_inliner.h",
-            "line": "16",
-            "message": "Cannot resolve symbol 'RewriteRule'"
-        },
-        {
-            "file": "..\\..\\..\\onnxruntime\\core\\graph\\function_inliner.h",
-            "line": "19",
-            "message": "Cannot resolve symbol 'RewriteRule'"
-        },
-        {
-            "file": "..\\..\\..\\onnxruntime\\core\\graph\\function_inliner.h",
-            "line": "21",
-            "message": "Type 'Graph' is incomplete"
-        },
-        {
-            "file": "..\\..\\..\\onnxruntime\\core\\graph\\function_inliner.h",
-            "line": "21",
-            "message": "Function 'Status onnxruntime::FunctionInliner::Apply(onnxruntime::Graph, onnxruntime::Node*, bool*)' has the 'override' specifier but does not override a base class member"
-        },
-        {
-            "file": "..\\..\\..\\onnxruntime\\test\\proto\\tml.proto",
-            "line": "3",
-            "message": "File not found in project"
-        },
-        {
-            "file": "..\\..\\..\\onnxruntime\\test\\proto\\tml.proto",
-            "line": "3",
-            "message": "Cannot resolve symbol"
-        },
-        {
-            "file": "..\\..\\..\\onnxruntime\\test\\proto\\tml.proto",
-            "line": "94",
-            "message": "Cannot resolve symbol"
-        }
-    ],
-    "inspected files count": 1064,
+    "inspected files count": 1063,
     "mem traffic": 21020
 }
