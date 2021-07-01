@@ -21,6 +21,9 @@ def check_report(report_file, known_errors):
         print("No compilation errors found")
         if known_errors:
             print("But {0} errors were expected".format(len(known_errors)))
+            return "no compilation errors found, but {0} errors were expected".format(len(known_errors))
+        else:
+            return None
     else:
         errors = set([(issue.get("File"), issue.get("Line"), issue.get("Message")) for issue in issue_nodes.iter("Issue")])
         if known_errors:
@@ -32,8 +35,12 @@ def check_report(report_file, known_errors):
             if not unexpected_errors and not missing_errors:
                 assert(len(expected_errors) == len(errors))
                 print("{0} errors found as expected".format(len(errors)))
+                return None
+            else:
+                return "expected and actual set of errors differ"
         else:
             print_errors("Unexpected", errors)
+            return "unexpected {0} errors found".format(len(errors))
 
 
 def run_inspect_code(project_dir, sln_file, project_to_check, msbuild_props):
@@ -69,18 +76,27 @@ def process_project(project_name, project):
             print("expected count of inspected files is {0}, but actual is {1}".format(expected_files_count, actual_files_count))
     else:
         print("count of inspected files is ", actual_files_count)
-    check_report(report_file, project.get("known errors"))
+    return check_report(report_file, project.get("known errors"))
 
 
 args = common.argparser.parse_args()
 if args.project:
     process_project(args.project, common.projects[args.project])
 else:
+    summary = []
     start_time = time.time()
 
     for project_name, project in common.projects.items():
         print("processing project {0}...".format(project_name), flush=True)
-        process_project(project_name, project)
+        result = process_project(project_name, project)
+        if result:
+            summary.append(project_name + ": " + result)
         print('-------------------------------------------------------', flush=True)
 
     print("Total time: " + common.duration(start_time, time.time()))
+    if len(summary) == 0:
+        print("Summary: OK")
+    else:
+        print("Summary: Fail")
+        for s in summary:
+            print("    " + s)
