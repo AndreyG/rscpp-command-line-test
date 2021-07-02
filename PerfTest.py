@@ -50,27 +50,14 @@ def measure_project(project_name, project, indexing):
     msbuild_props = project.get("msbuild properties")
     return run_inspect_code(project_dir, sln_file, project_to_check, msbuild_props, indexing)
 
-
-def get_process_version(cmd_args):
-    process = Popen(cmd_args, stdout=PIPE, text=True)
-    out, err = process.communicate()
-    exit_code = process.wait()
-    assert(exit_code == 0)
-    assert(not err)
-    return out.splitlines()
     
-def get_inspect_code_version():
-    output = get_process_version([common.inspect_code_path, "-v"])
-    prefix = "Version: "
-    for line in output:
-        if line.startswith(prefix):
-            return line[len(prefix):]
-
-
 def get_environment():
     result = {}
-    result["inspect code version"] = get_inspect_code_version()
-    result["computer name"] = platform.node()
+    result["inspect code version"] = common.env["resharper version"]
+    computer_name = common.env["computer name"]
+    if not computer_name:
+        computer_name = platform.node()
+    result["computer name"] = computer_name
     return result
 
 
