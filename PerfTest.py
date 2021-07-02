@@ -14,15 +14,11 @@ def invoke(args):
     process = Popen(args, stdout=PIPE, text=True)
     out, err = process.communicate()
     exit_code = process.wait()
-    end = time.time()
-    if exit_code != 0:
-        print("Error: exit code = " + str(exit_code))
-        return False
     if err:
         print("Error:")
         print(err)
         return False
-    return True
+    return exit_code
 
 
 def run_inspect_code(project_dir, sln_file, project_to_check, msbuild_props, indexing):
@@ -31,7 +27,7 @@ def run_inspect_code(project_dir, sln_file, project_to_check, msbuild_props, ind
     if indexing:
         args.append('--exclude="**"')
     #print(subprocess.list2cmdline(args))
-    assert(invoke(args))
+    assert(invoke(args) == (1 if indexing else 0))
     result = []
 
     for attempt in range(10):
@@ -39,7 +35,7 @@ def run_inspect_code(project_dir, sln_file, project_to_check, msbuild_props, ind
         if indexing:
             shutil.rmtree(common.caches_home)
         start = time.time()
-        assert(invoke(args))
+        assert(invoke(args) == (1 if indexing else 0))
         end = time.time()
         print("Elapsed time: " + common.duration(start, end))
         result.append(end - start)
