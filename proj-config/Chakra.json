@@ -11,13 +11,6 @@
         "Configuration": "Release",
         "Platform": "x64"
     },
-    "known errors": [
-        {
-            "file": "..\\lib\\Runtime\\Debug\\MutationBreakpoint.h",
-            "line": "5",
-            "message": "No corresponding file with the \"Precompiled Header\" property set to \"Create\" (/Yc) is found"
-        }
-    ],
     "inspected files count": 51,
     "mem traffic": 7600
 }
