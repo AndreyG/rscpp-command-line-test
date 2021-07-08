@@ -1,0 +1,18 @@
+{
+    "sources": {
+        "repo": "https://github.com/weidai11/cryptopp.git",
+        "commit": "df06a2d4dfc01eff6454b4e2aac899890a3dc3b5"
+    },
+    "custom build tool": {
+        "path to .sln": "cryptest.sln"
+    },
+    "to skip": [
+        "adhoc_002Ecpp_002Eproto"
+    ],
+    "known errors": [
+        {"file": "mqueue.h", "line": "138", "message": "Specialized template not found"},
+        {"file": "gf2n.h",   "line": "393", "message": "Specialized template not found"},
+        {"file": "queue.h",  "line": "265", "message": "Specialized template not found"}
+    ],
+    "inspected files count": 516
+}

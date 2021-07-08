@@ -369,5 +369,6 @@
     "CGAL" : "CGAL.json",
     "Diablo" : "Diablo.json",
     "RecastNavigation": "RecastNavigation.json",
+    "cryptopp": "Cryptopp.json",
     "PhysX-3.4": "PhysX.json"
 }
