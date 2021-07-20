@@ -370,5 +370,12 @@
     "Diablo" : "Diablo.json",
     "RecastNavigation": "RecastNavigation.json",
     "cryptopp": "Cryptopp.json",
+    "ninja": {
+        "sources": {
+            "repo": "https://github.com/ninja-build/ninja.git",
+            "commit": "c8f8f2a9e3016ab7a9ecb2e8b084cf441f3ae88e"
+        },
+        "inspected files count": 59
+    },
     "PhysX-3.4": "PhysX.json"
 }
