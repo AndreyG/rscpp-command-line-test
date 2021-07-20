@@ -12,16 +12,6 @@
             "file": "..\\libs\\weed\\example\\as_tuple.cpp",
             "line": "50",
             "message": "Substitution failed"
-        },
-        {
-            "file": "..\\libs\\string\\example\\c_str_to_sprout_string.cpp",
-            "line": "38",
-            "message": "Substitution failed"
-        },
-        {
-            "file": "..\\libs\\string\\example\\c_str_to_sprout_string.cpp",
-            "line": "34",
-            "message": "No matching function for call to 'string_from_c_str'"
         }
     ],
     "inspected files count": 151,
