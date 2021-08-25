@@ -5,12 +5,6 @@
     },
     "known errors": [
         {
-            "file": "..\\example\\is_creatable.cpp",
-            "line": "33",
-            "message": "static_assert failed: 'iworld is not abstract!'",
-            "reason": "RSCPP-20492: wrong is_constructible calculation for abstract classes"
-        },
-        {
             "file": "..\\test\\ut\\aux_\\type_traits.cpp", 
             "line": "300",
             "message": "static_assert failed: 'fail'",
