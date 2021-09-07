@@ -8,6 +8,7 @@
             "commit": "a7ee181aaa8a79b1fece474c733c4f571f0d4ef2"
         }
     },
+    "cmake generators" : [ "2017-x64" ],
     "cmake options": [
         "-Thost=x64",
         "-Wno-dev"

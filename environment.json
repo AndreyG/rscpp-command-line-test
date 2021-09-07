@@ -1,7 +1,15 @@
 {
     "build directory" : "C:/work/optimized-build/Bin.OptimizedBuild",
     "test directory" : "C:/work/rscpp-command-line-test",
-    "VS CMake Generator" : "Visual Studio 15 2017 Win64",
+    "VS CMake Generators" : {
+        "2017-x64" : {
+            "name": "Visual Studio 15 2017 Win64"
+        },
+        "2019-x64" : {
+            "name": "Visual Studio 16 2019",
+            "architecture": "x64"
+        }
+    },
     "vcpkg" : {
         "path" : "C:/work/vcpkg",
         "triplet" : "x64-windows"

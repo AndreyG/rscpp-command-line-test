@@ -78,8 +78,12 @@ def get_sources(project_input, target_dir):
         raise ValueError("Unknown source kind: {0}".format(kind))
 
 
-def invoke_cmake(build_dir, cmake_options, required_dependencies):
-    cmd_line_args = ["cmake", "..", "-G", env["VS CMake Generator"]]
+def invoke_cmake(build_dir, cmake_generator, cmake_options, required_dependencies):
+    cmd_line_args = ["cmake", "..", "-G", cmake_generator["name"]]
+    architecture = cmake_generator.get("architecture")
+    if architecture:
+        cmd_line_args.append("-A")
+        cmd_line_args.append(architecture)
     if required_dependencies:
         vcpkg = env.get("vcpkg")
         if vcpkg:
@@ -171,7 +175,7 @@ def generate_settings(files_to_skip):
     return ET.ElementTree(root)
 
 
-def prepare_project(project_name, project):
+def prepare_project(project_name, project, cmake_generator):
     target_dir = path.join(projects_dir, project_name)
     project_dir = get_sources(project["sources"], target_dir)
     custom_build_tool = project.get("custom build tool")
@@ -187,8 +191,10 @@ def prepare_project(project_name, project):
         sln_file = path.join(project_dir, custom_build_tool["path to .sln"])
         assert(path.exists(sln_file))
     else:
-        build_dir = path.join(project_dir, project.get("build dir", "build"))
-        sln_file = invoke_cmake(build_dir, project.get("cmake options"), project.get("required dependencies"))
+        gen_name, gen_description = cmake_generator
+        build_dir = path.join(project_dir, project.get("build dir", "build") + "-" + gen_name)
+        project_dir = build_dir
+        sln_file = invoke_cmake(build_dir, gen_description, project.get("cmake options"), project.get("required dependencies"))
         build_step = project.get("build step")
         if build_step:
             chdir(build_dir)

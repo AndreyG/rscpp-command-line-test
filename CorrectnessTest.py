@@ -61,11 +61,7 @@ def run_inspect_code(project_dir, sln_file, project_to_check, msbuild_props):
     return report_file, out
 
 
-def process_project(project_name, project):
-    project = common.read_conf_if_needed(project)
-
-    project_dir, sln_file = common.prepare_project(project_name, project)
-
+def check_project(project, project_dir, sln_file):
     project_to_check = project.get("project to check")
     msbuild_props = project.get("msbuild properties")
     report_file, output = run_inspect_code(project_dir, sln_file, project_to_check, msbuild_props)
@@ -78,6 +74,35 @@ def process_project(project_name, project):
         print("count of inspected files is ", actual_files_count)
     return check_report(report_file, project.get("known errors"))
 
+
+def process_project_with_cmake_generator(project, project_name, cmake_generator):
+    project_dir, sln_file = common.prepare_project(project_name, project, cmake_generator)
+    result = check_project(project, project_dir, sln_file)
+    if result:
+        name, _ = cmake_generator
+        return "(" + name + ") " + result
+
+
+def process_project(project_name, project):
+    project = common.read_conf_if_needed(project)
+
+    if "custom build tool" in project:
+        project_dir, sln_file = common.prepare_project(project_name, project, None)
+        return check_project(project, project_dir, sln_file)
+
+    supported_generators = common.env["VS CMake Generators"]
+    project_generators = project.get("cmake generators")
+
+    if project_generators:
+        for generator in project_generators:
+            result = process_project_with_cmake_generator(project, project_name, (generator, supported_generators[generator]))
+            if result:
+                return result
+    else:
+        for cmake_generator in supported_generators.items():
+            result = process_project_with_cmake_generator(project, project_name, cmake_generator)
+            if result:
+                return result
 
 args = common.argparser.parse_args()
 if args.project:
