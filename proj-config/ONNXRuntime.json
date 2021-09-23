@@ -17,6 +17,7 @@
     },
     "to skip": [
         "function_005Finliner_002Eh",
+        "gzip_005Fstream_002Eh",
         "tml_002Eproto"
     ],
     "required dependencies": [
