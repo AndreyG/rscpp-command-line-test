@@ -43,8 +43,8 @@ def run_inspect_code(project_dir, sln_file, project_to_check, msbuild_props, ind
     return result
 
 
-def measure_project(project_name, project, indexing):
-    project_dir, sln_file = common.prepare_project(project_name, project)
+def measure_project(project_name, project, indexing, cmake_generator):
+    project_dir, sln_file = common.prepare_project(project_name, project, cmake_generator)
 
     project_to_check = project.get("project to check")
     msbuild_props = project.get("msbuild properties")
@@ -73,8 +73,8 @@ def is_suitable_for_perf_test(project):
     return args.human_readable or not ("required dependencies" in project)
 
 
-def process_project(project_name, project):
-    result = measure_project(project_name, project, args.indexing)
+def process_project_with_cmake_generator(project_name, project, cmake_generator):
+    result = measure_project(project_name, project, args.indexing, cmake_generator)
     if args.human_readable:
         print(result)
     else:
@@ -82,10 +82,15 @@ def process_project(project_name, project):
         to_store["inspect-code results"] = result
         to_store["project"] = project_name
         to_store["environment"] = get_environment()
-        project_sources = project["sources"]
+        project_sources = project["sources"].copy()
         project_sources.pop("root", None)
         project_sources.pop("kind", None)
         to_store["project sources"] = project_sources
+
+        if cmake_generator:
+            gen_name, gen_value = cmake_generator
+            to_store["cmake generator"] = gen_name
+
         output_dir = args.out_dir
         if not path.isabs(output_dir):
             output_dir = path.join(common.cli_test_dir, output_dir)
@@ -95,6 +100,22 @@ def process_project(project_name, project):
         print(output_path)
         with open(output_path, "w") as output:
             json.dump(to_store, output, indent=4)
+
+
+def process_project(project_name, project):
+    if "custom build tool" in project:
+        process_project_with_cmake_generator(project_name, project, None)
+        return
+
+    supported_generators = common.env["VS CMake Generators"]
+    project_generators = project.get("cmake generators")
+
+    if project_generators:
+        for generator in project_generators:
+            process_project_with_cmake_generator(project_name, project, (generator, supported_generators[generator]))
+    else:
+        for cmake_generator in supported_generators.items():
+            process_project_with_cmake_generator(project_name, project, cmake_generator)
 
 
 project_name = args.project
