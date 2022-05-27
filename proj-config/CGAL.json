@@ -10,6 +10,7 @@
     "required dependencies": [
         "eigen3",
         "mpfr",
+        "boost-functional",
         "boost-graph",
         "boost-serialization",
         "boost-timer"
