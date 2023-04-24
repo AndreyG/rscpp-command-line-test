@@ -120,7 +120,7 @@ def read_conf_if_needed(project):
 
 def inspect_code_run_arguments(project_dir, sln_file, project_to_check, msbuild_props):
     report_file = path.join(project_dir, "resharper-report.xml")
-    args = ["-s=ERROR", "-f=Xml", "-no-build", "-o=" + report_file, "--caches-home=" + caches_home]
+    args = ["--severity=ERROR", "-f=Xml", "-no-build", "-o=" + report_file, "--caches-home=" + caches_home]
     if project_to_check:
         if isinstance(project_to_check, list):
             for p in project_to_check:
